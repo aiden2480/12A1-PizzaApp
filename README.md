@@ -1,7 +1,7 @@
 # 11-StudDB_VB
 Demo of an "Array of Records" for NSW SDD Students.
 
-The html page is at: https://bwattle.github.io/arrRecords/ details the functionality of successive versions.
+The html page is at: https://aiden2480.github.io/12A1-PizzaApp/ details the functionality of successive versions.
 
 A copy of the assessment task is at: https://github.com/bwattle/arrRecords/releases/download/v0.01-Doc/12SDD_A1-2022_Notification-AppsWithArraysOfRecords.docx
 
