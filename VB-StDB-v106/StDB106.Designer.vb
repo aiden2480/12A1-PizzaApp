@@ -36,6 +36,8 @@ Partial Class StDB106
         Me.btnAddStud = New System.Windows.Forms.Button()
         Me.txtStList = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
+        Me.chkPaid = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -77,7 +79,7 @@ Partial Class StDB106
         Me.txtLastName.Location = New System.Drawing.Point(142, 83)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 20)
-        Me.txtLastName.TabIndex = 3
+        Me.txtLastName.TabIndex = 1
         '
         'Label4
         '
@@ -93,7 +95,7 @@ Partial Class StDB106
         Me.txtDOB.Location = New System.Drawing.Point(248, 83)
         Me.txtDOB.Name = "txtDOB"
         Me.txtDOB.Size = New System.Drawing.Size(100, 20)
-        Me.txtDOB.TabIndex = 5
+        Me.txtDOB.TabIndex = 2
         '
         'Label5
         '
@@ -109,7 +111,7 @@ Partial Class StDB106
         Me.txtGender.Location = New System.Drawing.Point(354, 83)
         Me.txtGender.Name = "txtGender"
         Me.txtGender.Size = New System.Drawing.Size(100, 20)
-        Me.txtGender.TabIndex = 7
+        Me.txtGender.TabIndex = 3
         '
         'Label6
         '
@@ -125,14 +127,14 @@ Partial Class StDB106
         Me.txtAvMk.Location = New System.Drawing.Point(460, 83)
         Me.txtAvMk.Name = "txtAvMk"
         Me.txtAvMk.Size = New System.Drawing.Size(100, 20)
-        Me.txtAvMk.TabIndex = 9
+        Me.txtAvMk.TabIndex = 4
         '
         'btnAddStud
         '
         Me.btnAddStud.Location = New System.Drawing.Point(39, 129)
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(104, 23)
-        Me.btnAddStud.TabIndex = 11
+        Me.btnAddStud.TabIndex = 5
         Me.btnAddStud.Text = "Add Student"
         Me.btnAddStud.UseVisualStyleBackColor = True
         '
@@ -142,7 +144,7 @@ Partial Class StDB106
         Me.txtStList.Location = New System.Drawing.Point(36, 202)
         Me.txtStList.Name = "txtStList"
         Me.txtStList.Size = New System.Drawing.Size(533, 160)
-        Me.txtStList.TabIndex = 15
+        Me.txtStList.TabIndex = 8
         '
         'Label8
         '
@@ -153,11 +155,31 @@ Partial Class StDB106
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "List of entered students (for testing)"
         '
-        'Form1
+        'txtPhone
+        '
+        Me.txtPhone.Location = New System.Drawing.Point(248, 129)
+        Me.txtPhone.Mask = "(999) 000-0000"
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(100, 20)
+        Me.txtPhone.TabIndex = 6
+        '
+        'chkPaid
+        '
+        Me.chkPaid.AutoSize = True
+        Me.chkPaid.Location = New System.Drawing.Point(354, 131)
+        Me.chkPaid.Name = "chkPaid"
+        Me.chkPaid.Size = New System.Drawing.Size(47, 17)
+        Me.chkPaid.TabIndex = 7
+        Me.chkPaid.Text = "Paid"
+        Me.chkPaid.UseVisualStyleBackColor = True
+        '
+        'StDB106
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.chkPaid)
+        Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtStList)
         Me.Controls.Add(Me.btnAddStud)
@@ -172,8 +194,8 @@ Partial Class StDB106
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
-        Me.Name = "Form1"
-        Me.Text = "v1.06 Student Array of Records"
+        Me.Name = "StDB106"
+        Me.Text = "Student entry form"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -195,4 +217,6 @@ Partial Class StDB106
 
     Friend WithEvents txtStList As ListBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents txtPhone As MaskedTextBox
+    Friend WithEvents chkPaid As CheckBox
 End Class

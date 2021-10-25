@@ -3,34 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JS", "JS\", "{16DDDBC9-DC57-4FC7-9E4E-BF94D82987BE}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_59381"
-		Debug.AspNetCompiler.PhysicalPath = "JS\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59381\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_59381"
-		Release.AspNetCompiler.PhysicalPath = "JS\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59381\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "59381"
-		SlnRelativePath = "JS\"
-	EndProjectSection
-EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Py", "Py\Py.pyproj", "{58DF04CC-AC8E-40AB-A6E5-00FF983EEE65}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pas", "Pas", "{D681856C-FE4B-4E1E-B924-733AAB829EFB}"
-	ProjectSection(SolutionItems) = preProject
-		Pas\StDB-v105.pas = Pas\StDB-v105.pas
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FilesInRoot", "FilesInRoot", "{48F380F4-F4DF-4D82-832B-38B7A3F9DA8C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -51,12 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{16DDDBC9-DC57-4FC7-9E4E-BF94D82987BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16DDDBC9-DC57-4FC7-9E4E-BF94D82987BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16DDDBC9-DC57-4FC7-9E4E-BF94D82987BE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{16DDDBC9-DC57-4FC7-9E4E-BF94D82987BE}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{58DF04CC-AC8E-40AB-A6E5-00FF983EEE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58DF04CC-AC8E-40AB-A6E5-00FF983EEE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C650A3C3-4B3C-43B6-A47A-D716A225C202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C650A3C3-4B3C-43B6-A47A-D716A225C202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C650A3C3-4B3C-43B6-A47A-D716A225C202}.Release|Any CPU.ActiveCfg = Release|Any CPU
