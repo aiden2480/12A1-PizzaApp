@@ -47,7 +47,7 @@ Partial Class Pizza101
         Me.txtPhoneno = New System.Windows.Forms.MaskedTextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtPostcode = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -300,13 +300,13 @@ Partial Class Pizza101
         Me.txtPostcode.TabIndex = 4
         Me.txtPostcode.Text = "1"
         '
-        'TextBox1
+        'txtAddress
         '
-        Me.TextBox1.Location = New System.Drawing.Point(41, 115)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(249, 22)
-        Me.TextBox1.TabIndex = 3
+        Me.txtAddress.Location = New System.Drawing.Point(41, 115)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.Size = New System.Drawing.Size(249, 22)
+        Me.txtAddress.TabIndex = 3
         '
         'Label7
         '
@@ -426,7 +426,7 @@ Partial Class Pizza101
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtAddress)
         Me.Controls.Add(Me.txtPostcode)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtPhoneno)
@@ -487,7 +487,7 @@ Partial Class Pizza101
     Friend WithEvents txtPhoneno As MaskedTextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtPostcode As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtAddress As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label

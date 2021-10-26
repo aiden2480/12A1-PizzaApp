@@ -4,66 +4,56 @@
         Public orderID As Short
         Public firstName As String
         Public lastName As String
+        Public phoneNo As String
+        Public address As String
+        Public postcode As String
+        Public quantity As Byte             ' Max 255 pizzas
+        Public crustType As Char            ' t for thin / T for thick / c for cheese
+        Public toppings As List(Of String)
         Public deliveryDate As Date
         Public deliveryTime As String
-        Public postcode As String
-        Public quantity As Byte       ' Max 255 pizzas
+
+        Public Sub New(firstName As String, lastName As String, phoneNo As String, address As String,
+                       postcode As String, quantity As Byte, crustType As Char, toppings As List(Of String),
+                       deliveryDate As Date, deliveryTime As String)
+            Me.orderID = orders.Count() + 1
+            Me.firstName = firstName
+            Me.lastName = lastName
+            Me.phoneNo = phoneNo
+            Me.address = address
+            Me.postcode = postcode
+            Me.quantity = quantity
+            Me.crustType = crustType
+            Me.toppings = toppings
+            Me.deliveryDate = deliveryDate
+            Me.deliveryTime = deliveryTime
+        End Sub
     End Class
 
-    Dim orders(9) As PizzaOrder
-    Dim orderCount As Integer = 0
+    ' Establish variables
+    Shared orders As New List(Of PizzaOrder)
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Allocate memory
-        For i = 0 To 9
-            orders(i) = New PizzaOrder
-        Next
+        ' Load test orders
+        orders.Add(New PizzaOrder("Johnny", "Depp", "0431994732", "1 Kale Ave, Hollywood", "90027", 2, "c",
+                                   New List(Of String) From {"mus", "pep", "ham"}, "9/6/63", "21:30"))
+        orders.Add(New PizzaOrder("George", "Clooney", "0472883930", "480 Harvest Lane, Kansas City", "64106", 1, "T",
+                                   New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
+        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482774012", "34 Strother Street, Ryde", "2112", 3, "t",
+                                   New List(Of String) From {"pep", "bas"}, "8/8/21", "10:20"))
+        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482771824", "1 Taylor Street, Glebe", "2037", 5, "t",
+                                   New List(Of String) From {"mus", "pin", "ham", "bas"}, "9/10/21", "12:45"))
 
-        ' Load 4 test records
-        orders(0).orderID = 1
-        orders(0).firstName = "Johnny"
-        orders(0).lastName = "Depp"
-        orders(0).deliveryDate = "9/6/63"
-        orders(0).postcode = "m"
-        orders(0).quantity = 78.2
-
-        orders(1).orderID = 2
-        orders(1).firstName = "Jennifer"
-        orders(1).lastName = "Lawrence"
-        orders(1).deliveryDate = "15/8/90"
-        orders(1).postcode = "f"
-        orders(1).quantity = 88.2
-
-        orders(2).orderID = 3
-        orders(2).firstName = "George"
-        orders(2).lastName = "Clooney"
-        orders(2).deliveryDate = "6/5/61"
-        orders(2).postcode = "m"
-        orders(2).quantity = 68.2
-
-        orders(3).orderID = 4
-        orders(3).firstName = "Scarlett"
-        orders(3).lastName = "Johansson"
-        orders(3).deliveryDate = "22/11/84"
-        orders(3).postcode = "f"
-        orders(3).quantity = 72.2
-
-        ' Set the order count to the number of orders which have been entered
-        orderCount = 4
+        ' Render all orders in the form box
         displayList()
     End Sub
 
     Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
-        orders(orderCount).orderID = orderCount + 1 ' Allocate the new order ID to an incremented value
-
-        ' Place text from text boxes into the array - first orders(0), then orders(1), orders(2) etc
-        orders(orderCount).firstName = txtFirstName.Text
-        orders(orderCount).lastName = txtLastName.Text
-        orders(orderCount).deliveryDate = dateDeldate.Text
-        orders(orderCount).deliveryTime = txtDeltime.Text
-        orders(orderCount).postcode = txtPostcode.Text
-        orders(orderCount).quantity = txtQuantity.Text
-        orderCount += 1
+        ' TODO Grab crust type
+        orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
+                                  txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
+                                  "t", New List(Of String) From {"mus", "pep", "pan"},
+                                  dateDeldate.Value, txtDeltime.Text))
 
         ' Clear textboxes
         txtFirstName.Text = ""
@@ -81,7 +71,7 @@
         txtStList.Items.Clear()
 
         ' Loop through the array to print all rows
-        For i = 0 To orderCount - 1
+        For i = 0 To orders.Count() - 1
             txtStList.Items.Add(orders(i).orderID & " - " & orders(i).firstName & " - " &
                                 UCase(orders(i).lastName) & " - " & orders(i).deliveryDate & " - " &
                                 orders(i).postcode & " - " & orders(i).quantity)
