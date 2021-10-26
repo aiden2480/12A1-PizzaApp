@@ -4,9 +4,9 @@
         Public studID As Int16
         Public firstName As String
         Public lastName As String
-        Public DOB As Date
-        Public gender As Char
-        Public avMk As Single
+        Public deliveryDate As Date
+        Public postcode As String     ' Store postcode as a string
+        Public quantity As Byte         ' Max 255 pizzas
     End Class
     Dim students(9) As STUDENT
     Dim studentCount As Integer = 0
@@ -20,27 +20,27 @@
         students(0).studID = 1
         students(0).firstName = "Johnny"
         students(0).lastName = "Depp"
-        students(0).DOB = "9/6/63"
-        students(0).gender = "m"
-        students(0).avMk = 78.2
+        students(0).deliveryDate = "9/6/63"
+        students(0).postcode = "m"
+        students(0).quantity = 78.2
         students(1).studID = 2
         students(1).firstName = "Jennifer"
         students(1).lastName = "Lawrence"
-        students(1).DOB = "15/8/90"
-        students(1).gender = "f"
-        students(1).avMk = 88.2
+        students(1).deliveryDate = "15/8/90"
+        students(1).postcode = "f"
+        students(1).quantity = 88.2
         students(2).studID = 3
         students(2).firstName = "George"
         students(2).lastName = "Clooney"
-        students(2).DOB = "6/5/61"
-        students(2).gender = "m"
-        students(2).avMk = 68.2
+        students(2).deliveryDate = "6/5/61"
+        students(2).postcode = "m"
+        students(2).quantity = 68.2
         students(3).studID = 4
         students(3).firstName = "Scarlett"
         students(3).lastName = "Johansson"
-        students(3).DOB = "22/11/84"
-        students(3).gender = "f"
-        students(3).avMk = 72.2
+        students(3).deliveryDate = "22/11/84"
+        students(3).postcode = "f"
+        students(3).quantity = 72.2
         'set the student count to the number of students which have been entered
         studentCount = 4
         displayList()
@@ -50,16 +50,16 @@
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstName = txtFirstName.Text
         students(studentCount).lastName = txtLastName.Text
-        students(studentCount).DOB = txtDOB.Text
-        students(studentCount).gender = txtGender.Text
-        students(studentCount).avMk = txtAvMk.Text
+        students(studentCount).deliveryDate = txtDelDate.Text
+        students(studentCount).postcode = txtPostcode.Text
+        students(studentCount).quantity = txtQuantity.Text
         studentCount += 1
         'return text boxes to blank ready for next entry
         txtFirstName.Text = ""
         txtLastName.Text = ""
-        txtDOB.Text = ""
-        txtGender.Text = ""
-        txtAvMk.Text = ""
+        txtDelDate.Text = ""
+        txtPostcode.Text = ""
+        txtQuantity.Text = ""
         displayList()
     End Sub
     Private Sub displayList()
@@ -68,8 +68,8 @@
         'loop through the array to print all rows
         For i = 0 To studentCount - 1
             txtStList.Items.Add(students(i).studID & " - " & students(i).firstName & " - " &
-                              UCase(students(i).lastName) & " - " & students(i).DOB & " - " &
-                              students(i).gender & " - " & students(i).avMk)
+                              UCase(students(i).lastName) & " - " & students(i).deliveryDate & " - " &
+                              students(i).postcode & " - " & students(i).quantity)
         Next
     End Sub
 End Class

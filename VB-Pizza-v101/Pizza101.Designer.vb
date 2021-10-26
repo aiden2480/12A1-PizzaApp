@@ -28,11 +28,11 @@ Partial Class Pizza101
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtDOB = New System.Windows.Forms.TextBox()
+        Me.txtDelDate = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtGender = New System.Windows.Forms.TextBox()
+        Me.txtPostcode = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtAvMk = New System.Windows.Forms.TextBox()
+        Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.btnAddStud = New System.Windows.Forms.Button()
         Me.txtStList = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -50,9 +50,9 @@ Partial Class Pizza101
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(36, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 13)
+        Me.Label1.Size = New System.Drawing.Size(92, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Enter Student Details"
+        Me.Label1.Text = "Enter order details"
         '
         'Label2
         '
@@ -84,48 +84,49 @@ Partial Class Pizza101
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(248, 64)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.Size = New System.Drawing.Size(69, 13)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Date of Birth"
+        Me.Label4.Text = "Delivery date"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'txtDOB
+        'txtDelDate
         '
-        Me.txtDOB.Location = New System.Drawing.Point(248, 83)
-        Me.txtDOB.Name = "txtDOB"
-        Me.txtDOB.Size = New System.Drawing.Size(100, 20)
-        Me.txtDOB.TabIndex = 5
+        Me.txtDelDate.Location = New System.Drawing.Point(248, 83)
+        Me.txtDelDate.Name = "txtDelDate"
+        Me.txtDelDate.Size = New System.Drawing.Size(100, 20)
+        Me.txtDelDate.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(354, 64)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Gender"
+        Me.Label5.Text = "Postcode"
         '
-        'txtGender
+        'txtPostcode
         '
-        Me.txtGender.Location = New System.Drawing.Point(354, 83)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(100, 20)
-        Me.txtGender.TabIndex = 7
+        Me.txtPostcode.Location = New System.Drawing.Point(354, 83)
+        Me.txtPostcode.Name = "txtPostcode"
+        Me.txtPostcode.Size = New System.Drawing.Size(100, 20)
+        Me.txtPostcode.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(460, 64)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.Size = New System.Drawing.Size(46, 13)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Average Mk"
+        Me.Label6.Text = "Quantity"
         '
-        'txtAvMk
+        'txtQuantity
         '
-        Me.txtAvMk.Location = New System.Drawing.Point(460, 83)
-        Me.txtAvMk.Name = "txtAvMk"
-        Me.txtAvMk.Size = New System.Drawing.Size(100, 20)
-        Me.txtAvMk.TabIndex = 9
+        Me.txtQuantity.Location = New System.Drawing.Point(460, 83)
+        Me.txtQuantity.Name = "txtQuantity"
+        Me.txtQuantity.Size = New System.Drawing.Size(100, 20)
+        Me.txtQuantity.TabIndex = 9
         '
         'btnAddStud
         '
@@ -133,7 +134,7 @@ Partial Class Pizza101
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(104, 23)
         Me.btnAddStud.TabIndex = 11
-        Me.btnAddStud.Text = "Add Student"
+        Me.btnAddStud.Text = "Add order"
         Me.btnAddStud.UseVisualStyleBackColor = True
         '
         'txtStList
@@ -149,11 +150,11 @@ Partial Class Pizza101
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(39, 183)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(172, 13)
+        Me.Label8.Size = New System.Drawing.Size(161, 13)
         Me.Label8.TabIndex = 16
-        Me.Label8.Text = "List of entered students (for testing)"
+        Me.Label8.Text = "List of entered orders (for testing)"
         '
-        'Form1
+        'Pizza101
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -162,18 +163,18 @@ Partial Class Pizza101
         Me.Controls.Add(Me.txtStList)
         Me.Controls.Add(Me.btnAddStud)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtAvMk)
+        Me.Controls.Add(Me.txtQuantity)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtGender)
+        Me.Controls.Add(Me.txtPostcode)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtDOB)
+        Me.Controls.Add(Me.txtDelDate)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtLastName)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
-        Me.Name = "Form1"
-        Me.Text = "v1.05 Student Array of Records"
+        Me.Name = "Pizza101"
+        Me.Text = "v1.01 PizzaApp"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -185,11 +186,11 @@ Partial Class Pizza101
     Friend WithEvents Label3 As Label
     Friend WithEvents txtLastName As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtDOB As TextBox
+    Friend WithEvents txtDelDate As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtGender As TextBox
+    Friend WithEvents txtPostcode As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtAvMk As TextBox
+    Friend WithEvents txtQuantity As TextBox
     Friend WithEvents btnAddStud As Button
 
 
