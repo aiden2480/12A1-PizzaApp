@@ -104,7 +104,7 @@ Partial Class Pizza101
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(132, 22)
-        Me.txtLastName.TabIndex = 3
+        Me.txtLastName.TabIndex = 1
         '
         'Label5
         '
@@ -132,16 +132,16 @@ Partial Class Pizza101
         Me.txtQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(56, 22)
-        Me.txtQuantity.TabIndex = 9
+        Me.txtQuantity.TabIndex = 5
         Me.txtQuantity.Text = "1"
         '
         'btnAddOrder
         '
-        Me.btnAddOrder.Location = New System.Drawing.Point(301, 169)
+        Me.btnAddOrder.Location = New System.Drawing.Point(305, 167)
         Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddOrder.Name = "btnAddOrder"
-        Me.btnAddOrder.Size = New System.Drawing.Size(118, 22)
-        Me.btnAddOrder.TabIndex = 11
+        Me.btnAddOrder.Size = New System.Drawing.Size(116, 25)
+        Me.btnAddOrder.TabIndex = 17
         Me.btnAddOrder.Text = "Add order"
         Me.btnAddOrder.UseVisualStyleBackColor = True
         '
@@ -153,7 +153,7 @@ Partial Class Pizza101
         Me.txtStList.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStList.Name = "txtStList"
         Me.txtStList.Size = New System.Drawing.Size(710, 196)
-        Me.txtStList.TabIndex = 15
+        Me.txtStList.TabIndex = 100
         '
         'Label8
         '
@@ -172,7 +172,7 @@ Partial Class Pizza101
         Me.RadioButton1.Location = New System.Drawing.Point(472, 62)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(92, 21)
-        Me.RadioButton1.TabIndex = 17
+        Me.RadioButton1.TabIndex = 8
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Thin crust"
         Me.RadioButton1.UseVisualStyleBackColor = True
@@ -183,7 +183,7 @@ Partial Class Pizza101
         Me.RadioButton2.Location = New System.Drawing.Point(472, 88)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(98, 21)
-        Me.RadioButton2.TabIndex = 18
+        Me.RadioButton2.TabIndex = 9
         Me.RadioButton2.Text = "Thick crust"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
@@ -193,7 +193,7 @@ Partial Class Pizza101
         Me.RadioButton3.Location = New System.Drawing.Point(472, 115)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(111, 21)
-        Me.RadioButton3.TabIndex = 19
+        Me.RadioButton3.TabIndex = 10
         Me.RadioButton3.Text = "Cheesy crust"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
@@ -203,7 +203,7 @@ Partial Class Pizza101
         Me.CheckBox1.Location = New System.Drawing.Point(592, 61)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(96, 21)
-        Me.CheckBox1.TabIndex = 20
+        Me.CheckBox1.TabIndex = 11
         Me.CheckBox1.Text = "Mushroom"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -213,7 +213,7 @@ Partial Class Pizza101
         Me.CheckBox2.Location = New System.Drawing.Point(592, 88)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(93, 21)
-        Me.CheckBox2.TabIndex = 21
+        Me.CheckBox2.TabIndex = 12
         Me.CheckBox2.Text = "Pineapple"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -223,7 +223,7 @@ Partial Class Pizza101
         Me.CheckBox3.Location = New System.Drawing.Point(592, 115)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(95, 21)
-        Me.CheckBox3.TabIndex = 22
+        Me.CheckBox3.TabIndex = 13
         Me.CheckBox3.Text = "Pepperoni"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
@@ -233,7 +233,7 @@ Partial Class Pizza101
         Me.CheckBox4.Location = New System.Drawing.Point(698, 115)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(69, 21)
-        Me.CheckBox4.TabIndex = 25
+        Me.CheckBox4.TabIndex = 16
         Me.CheckBox4.Text = "Olives"
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
@@ -243,7 +243,7 @@ Partial Class Pizza101
         Me.CheckBox5.Location = New System.Drawing.Point(698, 88)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(60, 21)
-        Me.CheckBox5.TabIndex = 24
+        Me.CheckBox5.TabIndex = 15
         Me.CheckBox5.Text = "Basil"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
@@ -253,7 +253,7 @@ Partial Class Pizza101
         Me.CheckBox6.Location = New System.Drawing.Point(698, 61)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.Size = New System.Drawing.Size(59, 21)
-        Me.CheckBox6.TabIndex = 23
+        Me.CheckBox6.TabIndex = 14
         Me.CheckBox6.Text = "Ham"
         Me.CheckBox6.UseVisualStyleBackColor = True
         '
@@ -262,7 +262,7 @@ Partial Class Pizza101
         Me.dateDeldate.Location = New System.Drawing.Point(41, 169)
         Me.dateDeldate.Name = "dateDeldate"
         Me.dateDeldate.Size = New System.Drawing.Size(200, 22)
-        Me.dateDeldate.TabIndex = 27
+        Me.dateDeldate.TabIndex = 6
         '
         'txtDeltime
         '
@@ -270,7 +270,7 @@ Partial Class Pizza101
         Me.txtDeltime.Mask = "00:00"
         Me.txtDeltime.Name = "txtDeltime"
         Me.txtDeltime.Size = New System.Drawing.Size(41, 22)
-        Me.txtDeltime.TabIndex = 26
+        Me.txtDeltime.TabIndex = 7
         Me.txtDeltime.ValidatingType = GetType(Date)
         '
         'txtPhoneno
@@ -279,7 +279,7 @@ Partial Class Pizza101
         Me.txtPhoneno.Mask = "(999) 000-0000"
         Me.txtPhoneno.Name = "txtPhoneno"
         Me.txtPhoneno.Size = New System.Drawing.Size(100, 22)
-        Me.txtPhoneno.TabIndex = 28
+        Me.txtPhoneno.TabIndex = 2
         '
         'Label4
         '
@@ -297,7 +297,7 @@ Partial Class Pizza101
         Me.txtPostcode.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPostcode.Name = "txtPostcode"
         Me.txtPostcode.Size = New System.Drawing.Size(56, 22)
-        Me.txtPostcode.TabIndex = 30
+        Me.txtPostcode.TabIndex = 4
         Me.txtPostcode.Text = "1"
         '
         'TextBox1
@@ -306,7 +306,7 @@ Partial Class Pizza101
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(249, 22)
-        Me.TextBox1.TabIndex = 31
+        Me.TextBox1.TabIndex = 3
         '
         'Label7
         '
@@ -365,7 +365,8 @@ Partial Class Pizza101
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox2.TabIndex = 36
+        Me.TextBox2.TabIndex = 100
+        Me.TextBox2.TabStop = False
         Me.TextBox2.Text = "$0"
         '
         'Label13
@@ -385,7 +386,8 @@ Partial Class Pizza101
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox3.TabIndex = 38
+        Me.TextBox3.TabIndex = 100
+        Me.TextBox3.TabStop = False
         Me.TextBox3.Text = "$0"
         '
         'Label14
@@ -405,7 +407,8 @@ Partial Class Pizza101
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox4.TabIndex = 40
+        Me.TextBox4.TabIndex = 100
+        Me.TextBox4.TabStop = False
         Me.TextBox4.Text = "$0"
         '
         'Pizza101
