@@ -5,6 +5,7 @@
         Public firstName As String
         Public lastName As String
         Public deliveryDate As Date
+        Public deliveryTime As String
         Public postcode As String
         Public quantity As Byte       ' Max 255 pizzas
     End Class
@@ -58,7 +59,8 @@
         ' Place text from text boxes into the array - first orders(0), then orders(1), orders(2) etc
         orders(orderCount).firstName = txtFirstName.Text
         orders(orderCount).lastName = txtLastName.Text
-        orders(orderCount).deliveryDate = txtDelDate.Text
+        orders(orderCount).deliveryDate = dateDeldate.Text
+        orders(orderCount).deliveryTime = txtDeltime.Text
         orders(orderCount).postcode = txtPostcode.Text
         orders(orderCount).quantity = txtQuantity.Text
         orderCount += 1
@@ -66,7 +68,8 @@
         ' Clear textboxes
         txtFirstName.Text = ""
         txtLastName.Text = ""
-        txtDelDate.Text = ""
+        dateDeldate.Text = ""
+        txtDeltime.Text = ""
         txtPostcode.Text = ""
         txtQuantity.Text = ""
 
