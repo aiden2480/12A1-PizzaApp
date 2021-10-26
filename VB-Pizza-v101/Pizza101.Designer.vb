@@ -33,135 +33,150 @@ Partial Class Pizza101
         Me.txtPostcode = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
-        Me.btnAddStud = New System.Windows.Forms.Button()
+        Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.txtStList = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(36, 83)
+        Me.txtFirstName.Location = New System.Drawing.Point(54, 128)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(100, 20)
+        Me.txtFirstName.Size = New System.Drawing.Size(148, 26)
         Me.txtFirstName.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 35)
+        Me.Label1.Location = New System.Drawing.Point(54, 54)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 13)
+        Me.Label1.Size = New System.Drawing.Size(139, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter order details"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 64)
+        Me.Label2.Location = New System.Drawing.Point(54, 98)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.Size = New System.Drawing.Size(86, 20)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "First Name"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(142, 64)
+        Me.Label3.Location = New System.Drawing.Point(213, 98)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 13)
+        Me.Label3.Size = New System.Drawing.Size(86, 20)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Last Name"
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(142, 83)
+        Me.txtLastName.Location = New System.Drawing.Point(213, 128)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(100, 20)
+        Me.txtLastName.Size = New System.Drawing.Size(148, 26)
         Me.txtLastName.TabIndex = 3
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(248, 64)
+        Me.Label4.Location = New System.Drawing.Point(372, 98)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 13)
+        Me.Label4.Size = New System.Drawing.Size(100, 20)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Delivery date"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'txtDelDate
         '
-        Me.txtDelDate.Location = New System.Drawing.Point(248, 83)
+        Me.txtDelDate.Location = New System.Drawing.Point(372, 128)
+        Me.txtDelDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtDelDate.Name = "txtDelDate"
-        Me.txtDelDate.Size = New System.Drawing.Size(100, 20)
+        Me.txtDelDate.Size = New System.Drawing.Size(148, 26)
         Me.txtDelDate.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(354, 64)
+        Me.Label5.Location = New System.Drawing.Point(531, 98)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.Size = New System.Drawing.Size(76, 20)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Postcode"
         '
         'txtPostcode
         '
-        Me.txtPostcode.Location = New System.Drawing.Point(354, 83)
+        Me.txtPostcode.Location = New System.Drawing.Point(531, 128)
+        Me.txtPostcode.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPostcode.Name = "txtPostcode"
-        Me.txtPostcode.Size = New System.Drawing.Size(100, 20)
+        Me.txtPostcode.Size = New System.Drawing.Size(148, 26)
         Me.txtPostcode.TabIndex = 7
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(460, 64)
+        Me.Label6.Location = New System.Drawing.Point(690, 98)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(46, 13)
+        Me.Label6.Size = New System.Drawing.Size(68, 20)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Quantity"
         '
         'txtQuantity
         '
-        Me.txtQuantity.Location = New System.Drawing.Point(460, 83)
+        Me.txtQuantity.Location = New System.Drawing.Point(690, 128)
+        Me.txtQuantity.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtQuantity.Name = "txtQuantity"
-        Me.txtQuantity.Size = New System.Drawing.Size(100, 20)
+        Me.txtQuantity.Size = New System.Drawing.Size(148, 26)
         Me.txtQuantity.TabIndex = 9
         '
-        'btnAddStud
+        'btnAddOrder
         '
-        Me.btnAddStud.Location = New System.Drawing.Point(39, 129)
-        Me.btnAddStud.Name = "btnAddStud"
-        Me.btnAddStud.Size = New System.Drawing.Size(104, 23)
-        Me.btnAddStud.TabIndex = 11
-        Me.btnAddStud.Text = "Add order"
-        Me.btnAddStud.UseVisualStyleBackColor = True
+        Me.btnAddOrder.Location = New System.Drawing.Point(58, 198)
+        Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnAddOrder.Name = "btnAddOrder"
+        Me.btnAddOrder.Size = New System.Drawing.Size(156, 35)
+        Me.btnAddOrder.TabIndex = 11
+        Me.btnAddOrder.Text = "Add order"
+        Me.btnAddOrder.UseVisualStyleBackColor = True
         '
         'txtStList
         '
         Me.txtStList.FormattingEnabled = True
-        Me.txtStList.Location = New System.Drawing.Point(36, 202)
+        Me.txtStList.ItemHeight = 20
+        Me.txtStList.Location = New System.Drawing.Point(54, 311)
+        Me.txtStList.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtStList.Name = "txtStList"
-        Me.txtStList.Size = New System.Drawing.Size(533, 160)
+        Me.txtStList.Size = New System.Drawing.Size(798, 244)
         Me.txtStList.TabIndex = 15
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(39, 183)
+        Me.Label8.Location = New System.Drawing.Point(58, 282)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(161, 13)
+        Me.Label8.Size = New System.Drawing.Size(245, 20)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "List of entered orders (for testing)"
         '
         'Pizza101
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.ClientSize = New System.Drawing.Size(916, 602)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtStList)
-        Me.Controls.Add(Me.btnAddStud)
+        Me.Controls.Add(Me.btnAddOrder)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtQuantity)
         Me.Controls.Add(Me.Label5)
@@ -173,6 +188,7 @@ Partial Class Pizza101
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Pizza101"
         Me.Text = "v1.01 PizzaApp"
         Me.ResumeLayout(False)
@@ -191,7 +207,7 @@ Partial Class Pizza101
     Friend WithEvents txtPostcode As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtQuantity As TextBox
-    Friend WithEvents btnAddStud As Button
+    Friend WithEvents btnAddOrder As Button
 
 
     Friend WithEvents txtStList As ListBox

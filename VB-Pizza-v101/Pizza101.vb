@@ -1,75 +1,87 @@
 ﻿Public Class Pizza101
-    'set up a record or "class" for a student
-    Class STUDENT
-        Public studID As Int16
+    ' Set up a class for each order
+    Class PizzaOrder
+        Public orderID As Short
         Public firstName As String
         Public lastName As String
         Public deliveryDate As Date
-        Public postcode As String     ' Store postcode as a string
-        Public quantity As Byte         ' Max 255 pizzas
+        Public postcode As String
+        Public quantity As Byte       ' Max 255 pizzas
     End Class
-    Dim students(9) As STUDENT
-    Dim studentCount As Integer = 0
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'allocate memory
+    Dim orders(9) As PizzaOrder
+    Dim orderCount As Integer = 0
+
+    Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Allocate memory
         For i = 0 To 9
-            students(i) = New STUDENT
+            orders(i) = New PizzaOrder
         Next
-        'load 4 test records
-        students(0).studID = 1
-        students(0).firstName = "Johnny"
-        students(0).lastName = "Depp"
-        students(0).deliveryDate = "9/6/63"
-        students(0).postcode = "m"
-        students(0).quantity = 78.2
-        students(1).studID = 2
-        students(1).firstName = "Jennifer"
-        students(1).lastName = "Lawrence"
-        students(1).deliveryDate = "15/8/90"
-        students(1).postcode = "f"
-        students(1).quantity = 88.2
-        students(2).studID = 3
-        students(2).firstName = "George"
-        students(2).lastName = "Clooney"
-        students(2).deliveryDate = "6/5/61"
-        students(2).postcode = "m"
-        students(2).quantity = 68.2
-        students(3).studID = 4
-        students(3).firstName = "Scarlett"
-        students(3).lastName = "Johansson"
-        students(3).deliveryDate = "22/11/84"
-        students(3).postcode = "f"
-        students(3).quantity = 72.2
-        'set the student count to the number of students which have been entered
-        studentCount = 4
+
+        ' Load 4 test records
+        orders(0).orderID = 1
+        orders(0).firstName = "Johnny"
+        orders(0).lastName = "Depp"
+        orders(0).deliveryDate = "9/6/63"
+        orders(0).postcode = "m"
+        orders(0).quantity = 78.2
+
+        orders(1).orderID = 2
+        orders(1).firstName = "Jennifer"
+        orders(1).lastName = "Lawrence"
+        orders(1).deliveryDate = "15/8/90"
+        orders(1).postcode = "f"
+        orders(1).quantity = 88.2
+
+        orders(2).orderID = 3
+        orders(2).firstName = "George"
+        orders(2).lastName = "Clooney"
+        orders(2).deliveryDate = "6/5/61"
+        orders(2).postcode = "m"
+        orders(2).quantity = 68.2
+
+        orders(3).orderID = 4
+        orders(3).firstName = "Scarlett"
+        orders(3).lastName = "Johansson"
+        orders(3).deliveryDate = "22/11/84"
+        orders(3).postcode = "f"
+        orders(3).quantity = 72.2
+
+        ' Set the order count to the number of orders which have been entered
+        orderCount = 4
         displayList()
     End Sub
-    Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        students(studentCount).studID = studentCount + 1 'allocate the new student ID to an incremented value
-        'place text from text boxes into the array - first students(0), then students(1), students(2) etc
-        students(studentCount).firstName = txtFirstName.Text
-        students(studentCount).lastName = txtLastName.Text
-        students(studentCount).deliveryDate = txtDelDate.Text
-        students(studentCount).postcode = txtPostcode.Text
-        students(studentCount).quantity = txtQuantity.Text
-        studentCount += 1
-        'return text boxes to blank ready for next entry
+
+    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        orders(orderCount).orderID = orderCount + 1 ' Allocate the new order ID to an incremented value
+
+        ' Place text from text boxes into the array - first orders(0), then orders(1), orders(2) etc
+        orders(orderCount).firstName = txtFirstName.Text
+        orders(orderCount).lastName = txtLastName.Text
+        orders(orderCount).deliveryDate = txtDelDate.Text
+        orders(orderCount).postcode = txtPostcode.Text
+        orders(orderCount).quantity = txtQuantity.Text
+        orderCount += 1
+
+        ' Clear textboxes
         txtFirstName.Text = ""
         txtLastName.Text = ""
         txtDelDate.Text = ""
         txtPostcode.Text = ""
         txtQuantity.Text = ""
+
+        ' Load all records
         displayList()
     End Sub
+
     Private Sub displayList()
-        'clear the list box as it keeps the earlier loop
         txtStList.Items.Clear()
-        'loop through the array to print all rows
-        For i = 0 To studentCount - 1
-            txtStList.Items.Add(students(i).studID & " - " & students(i).firstName & " - " &
-                              UCase(students(i).lastName) & " - " & students(i).deliveryDate & " - " &
-                              students(i).postcode & " - " & students(i).quantity)
+
+        ' Loop through the array to print all rows
+        For i = 0 To orderCount - 1
+            txtStList.Items.Add(orders(i).orderID & " - " & orders(i).firstName & " - " &
+                                UCase(orders(i).lastName) & " - " & orders(i).deliveryDate & " - " &
+                                orders(i).postcode & " - " & orders(i).quantity)
         Next
     End Sub
 End Class
