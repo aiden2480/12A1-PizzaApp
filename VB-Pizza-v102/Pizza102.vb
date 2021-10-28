@@ -1,4 +1,4 @@
-﻿Public Class Pizza102
+Public Class Pizza102
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -88,5 +88,33 @@
         chkHam.Checked = False
         chkAnchovies.Checked = False
         chkOlives.Checked = False
+    End Sub
+    
+    Private Sub calculateCrustCost()
+        Dim cost As Decimal
+
+        Select Case True
+            Case chkThincrust.Checked
+                cost = 0
+            Case chkThickcrust.Checked
+                cost = 2
+            Case chkCheesecrust.Checked
+                cost = 3.5
+        End Select
+
+        txtCrustcost.Text = FormatCurrency(cost)
+    End Sub
+
+    ' Events fire from checkboxes and radio buttons being updated
+    Private Sub thinCrustChanged(sender As Object, e As EventArgs) Handles chkThincrust.CheckedChanged
+        calculateCrustCost()
+    End Sub
+
+    Private Sub thickCrustChanged(sender As Object, e As EventArgs) Handles chkThickcrust.CheckedChanged
+        calculateCrustCost()
+    End Sub
+
+    Private Sub cheeseCrustChanged(sender As Object, e As EventArgs) Handles chkCheesecrust.CheckedChanged
+        calculateCrustCost()
     End Sub
 End Class
