@@ -33,15 +33,15 @@ Partial Class Pizza101
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.txtStList = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.chkThincrust = New System.Windows.Forms.RadioButton()
+        Me.chkThickcrust = New System.Windows.Forms.RadioButton()
+        Me.chkCheesecrust = New System.Windows.Forms.RadioButton()
+        Me.chkMushroom = New System.Windows.Forms.CheckBox()
+        Me.chkPineapple = New System.Windows.Forms.CheckBox()
+        Me.chkPepperoni = New System.Windows.Forms.CheckBox()
+        Me.chkOlives = New System.Windows.Forms.CheckBox()
+        Me.chkBasil = New System.Windows.Forms.CheckBox()
+        Me.chkHam = New System.Windows.Forms.CheckBox()
         Me.dateDeldate = New System.Windows.Forms.DateTimePicker()
         Me.txtDeltime = New System.Windows.Forms.MaskedTextBox()
         Me.txtPhoneno = New System.Windows.Forms.MaskedTextBox()
@@ -53,11 +53,11 @@ Partial Class Pizza101
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtCrustcost = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtToppingscost = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtTotalcost = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -165,97 +165,97 @@ Partial Class Pizza101
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "List of entered orders (for testing)"
         '
-        'RadioButton1
+        'chkThincrust
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(472, 62)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(92, 21)
-        Me.RadioButton1.TabIndex = 8
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Thin crust"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.chkThincrust.AutoSize = True
+        Me.chkThincrust.Checked = True
+        Me.chkThincrust.Location = New System.Drawing.Point(472, 62)
+        Me.chkThincrust.Name = "chkThincrust"
+        Me.chkThincrust.Size = New System.Drawing.Size(92, 21)
+        Me.chkThincrust.TabIndex = 8
+        Me.chkThincrust.TabStop = True
+        Me.chkThincrust.Text = "Thin crust"
+        Me.chkThincrust.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'chkThickcrust
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(472, 88)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(98, 21)
-        Me.RadioButton2.TabIndex = 9
-        Me.RadioButton2.Text = "Thick crust"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.chkThickcrust.AutoSize = True
+        Me.chkThickcrust.Location = New System.Drawing.Point(472, 88)
+        Me.chkThickcrust.Name = "chkThickcrust"
+        Me.chkThickcrust.Size = New System.Drawing.Size(98, 21)
+        Me.chkThickcrust.TabIndex = 9
+        Me.chkThickcrust.Text = "Thick crust"
+        Me.chkThickcrust.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'chkCheesecrust
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(472, 115)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(111, 21)
-        Me.RadioButton3.TabIndex = 10
-        Me.RadioButton3.Text = "Cheesy crust"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.chkCheesecrust.AutoSize = True
+        Me.chkCheesecrust.Location = New System.Drawing.Point(472, 115)
+        Me.chkCheesecrust.Name = "chkCheesecrust"
+        Me.chkCheesecrust.Size = New System.Drawing.Size(111, 21)
+        Me.chkCheesecrust.TabIndex = 10
+        Me.chkCheesecrust.Text = "Cheesy crust"
+        Me.chkCheesecrust.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkMushroom
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(592, 61)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 21)
-        Me.CheckBox1.TabIndex = 11
-        Me.CheckBox1.Text = "Mushroom"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkMushroom.AutoSize = True
+        Me.chkMushroom.Location = New System.Drawing.Point(592, 61)
+        Me.chkMushroom.Name = "chkMushroom"
+        Me.chkMushroom.Size = New System.Drawing.Size(96, 21)
+        Me.chkMushroom.TabIndex = 11
+        Me.chkMushroom.Text = "Mushroom"
+        Me.chkMushroom.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkPineapple
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(592, 88)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(93, 21)
-        Me.CheckBox2.TabIndex = 12
-        Me.CheckBox2.Text = "Pineapple"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkPineapple.AutoSize = True
+        Me.chkPineapple.Location = New System.Drawing.Point(592, 88)
+        Me.chkPineapple.Name = "chkPineapple"
+        Me.chkPineapple.Size = New System.Drawing.Size(93, 21)
+        Me.chkPineapple.TabIndex = 12
+        Me.chkPineapple.Text = "Pineapple"
+        Me.chkPineapple.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'chkPepperoni
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(592, 115)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(95, 21)
-        Me.CheckBox3.TabIndex = 13
-        Me.CheckBox3.Text = "Pepperoni"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkPepperoni.AutoSize = True
+        Me.chkPepperoni.Location = New System.Drawing.Point(592, 115)
+        Me.chkPepperoni.Name = "chkPepperoni"
+        Me.chkPepperoni.Size = New System.Drawing.Size(95, 21)
+        Me.chkPepperoni.TabIndex = 13
+        Me.chkPepperoni.Text = "Pepperoni"
+        Me.chkPepperoni.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'chkOlives
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(698, 115)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(69, 21)
-        Me.CheckBox4.TabIndex = 16
-        Me.CheckBox4.Text = "Olives"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.chkOlives.AutoSize = True
+        Me.chkOlives.Location = New System.Drawing.Point(698, 115)
+        Me.chkOlives.Name = "chkOlives"
+        Me.chkOlives.Size = New System.Drawing.Size(69, 21)
+        Me.chkOlives.TabIndex = 16
+        Me.chkOlives.Text = "Olives"
+        Me.chkOlives.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'chkBasil
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(698, 88)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(60, 21)
-        Me.CheckBox5.TabIndex = 15
-        Me.CheckBox5.Text = "Basil"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.chkBasil.AutoSize = True
+        Me.chkBasil.Location = New System.Drawing.Point(698, 88)
+        Me.chkBasil.Name = "chkBasil"
+        Me.chkBasil.Size = New System.Drawing.Size(60, 21)
+        Me.chkBasil.TabIndex = 15
+        Me.chkBasil.Text = "Basil"
+        Me.chkBasil.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'chkHam
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(698, 61)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(59, 21)
-        Me.CheckBox6.TabIndex = 14
-        Me.CheckBox6.Text = "Ham"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.chkHam.AutoSize = True
+        Me.chkHam.Location = New System.Drawing.Point(698, 61)
+        Me.chkHam.Name = "chkHam"
+        Me.chkHam.Size = New System.Drawing.Size(59, 21)
+        Me.chkHam.TabIndex = 14
+        Me.chkHam.Text = "Ham"
+        Me.chkHam.UseVisualStyleBackColor = True
         '
         'dateDeldate
         '
@@ -358,16 +358,16 @@ Partial Class Pizza101
         Me.Label12.TabIndex = 37
         Me.Label12.Text = "Crust cost"
         '
-        'TextBox2
+        'txtCrustcost
         '
-        Me.TextBox2.Location = New System.Drawing.Point(472, 169)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox2.TabIndex = 100
-        Me.TextBox2.TabStop = False
-        Me.TextBox2.Text = "$0"
+        Me.txtCrustcost.Location = New System.Drawing.Point(472, 169)
+        Me.txtCrustcost.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCrustcost.Name = "txtCrustcost"
+        Me.txtCrustcost.ReadOnly = True
+        Me.txtCrustcost.Size = New System.Drawing.Size(92, 22)
+        Me.txtCrustcost.TabIndex = 100
+        Me.txtCrustcost.TabStop = False
+        Me.txtCrustcost.Text = "$0"
         '
         'Label13
         '
@@ -379,16 +379,16 @@ Partial Class Pizza101
         Me.Label13.TabIndex = 39
         Me.Label13.Text = "Toppings cost"
         '
-        'TextBox3
+        'txtToppingscost
         '
-        Me.TextBox3.Location = New System.Drawing.Point(579, 169)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox3.TabIndex = 100
-        Me.TextBox3.TabStop = False
-        Me.TextBox3.Text = "$0"
+        Me.txtToppingscost.Location = New System.Drawing.Point(579, 169)
+        Me.txtToppingscost.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtToppingscost.Name = "txtToppingscost"
+        Me.txtToppingscost.ReadOnly = True
+        Me.txtToppingscost.Size = New System.Drawing.Size(92, 22)
+        Me.txtToppingscost.TabIndex = 100
+        Me.txtToppingscost.TabStop = False
+        Me.txtToppingscost.Text = "$0"
         '
         'Label14
         '
@@ -400,16 +400,16 @@ Partial Class Pizza101
         Me.Label14.TabIndex = 41
         Me.Label14.Text = "Total"
         '
-        'TextBox4
+        'txtTotalcost
         '
-        Me.TextBox4.Location = New System.Drawing.Point(684, 169)
-        Me.TextBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(92, 22)
-        Me.TextBox4.TabIndex = 100
-        Me.TextBox4.TabStop = False
-        Me.TextBox4.Text = "$0"
+        Me.txtTotalcost.Location = New System.Drawing.Point(684, 169)
+        Me.txtTotalcost.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTotalcost.Name = "txtTotalcost"
+        Me.txtTotalcost.ReadOnly = True
+        Me.txtTotalcost.Size = New System.Drawing.Size(92, 22)
+        Me.txtTotalcost.TabIndex = 100
+        Me.txtTotalcost.TabStop = False
+        Me.txtTotalcost.Text = "$0"
         '
         'Pizza101
         '
@@ -417,11 +417,11 @@ Partial Class Pizza101
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(814, 482)
         Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.txtTotalcost)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.txtToppingscost)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtCrustcost)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -432,15 +432,15 @@ Partial Class Pizza101
         Me.Controls.Add(Me.txtPhoneno)
         Me.Controls.Add(Me.dateDeldate)
         Me.Controls.Add(Me.txtDeltime)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.CheckBox5)
-        Me.Controls.Add(Me.CheckBox6)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.chkOlives)
+        Me.Controls.Add(Me.chkBasil)
+        Me.Controls.Add(Me.chkHam)
+        Me.Controls.Add(Me.chkPepperoni)
+        Me.Controls.Add(Me.chkPineapple)
+        Me.Controls.Add(Me.chkMushroom)
+        Me.Controls.Add(Me.chkCheesecrust)
+        Me.Controls.Add(Me.chkThickcrust)
+        Me.Controls.Add(Me.chkThincrust)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtStList)
         Me.Controls.Add(Me.btnAddOrder)
@@ -473,15 +473,15 @@ Partial Class Pizza101
 
     Friend WithEvents txtStList As ListBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents chkThincrust As RadioButton
+    Friend WithEvents chkThickcrust As RadioButton
+    Friend WithEvents chkCheesecrust As RadioButton
+    Friend WithEvents chkMushroom As CheckBox
+    Friend WithEvents chkPineapple As CheckBox
+    Friend WithEvents chkPepperoni As CheckBox
+    Friend WithEvents chkOlives As CheckBox
+    Friend WithEvents chkBasil As CheckBox
+    Friend WithEvents chkHam As CheckBox
     Friend WithEvents dateDeldate As DateTimePicker
     Friend WithEvents txtDeltime As MaskedTextBox
     Friend WithEvents txtPhoneno As MaskedTextBox
@@ -493,9 +493,9 @@ Partial Class Pizza101
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtCrustcost As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtToppingscost As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtTotalcost As TextBox
 End Class
