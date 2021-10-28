@@ -1,4 +1,4 @@
-Public Class Pizza101
+﻿Public Class Pizza101
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -40,25 +40,23 @@ Public Class Pizza101
         orders.Add(New PizzaOrder("George", "Clooney", "0472883930", "480 Harvest Lane, Kansas City", "64106", 1, "T",
                                   New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
         orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482774012", "34 Strother Street, Ryde", "2112", 3, "t",
-                                  New List(Of String) From {"pep", "bas"}, "8/8/21", "10:20"))
+                                  New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
         orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482771824", "1 Taylor Street, Glebe", "2037", 5, "t",
-                                  New List(Of String) From {"mus", "pin", "ham", "bas"}, "9/10/21", "12:45"))
+                                  New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
 
         ' Render all orders in the form box
         displayList()
     End Sub
 
-    Private Sub btnAddOrder_Click(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+    Private Sub addOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         ' TODO Grab crust type and toppings
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   "t", New List(Of String) From {"mus", "pep", "pan"},
                                   dateDeldate.Value, txtDeltime.Text))
 
-        ' Clear textboxes
+        ' Clear textboxes and load records
         resetFields()
-
-        ' Load all records
         displayList()
     End Sub
 
@@ -88,7 +86,7 @@ Public Class Pizza101
         chkPineapple.Checked = False
         chkPepperoni.Checked = False
         chkHam.Checked = False
-        chkBasil.Checked = False
+        chkAnchovies.Checked = False
         chkOlives.Checked = False
     End Sub
 End Class

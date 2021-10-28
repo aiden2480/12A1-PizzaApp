@@ -40,7 +40,7 @@ Partial Class Pizza101
         Me.chkPineapple = New System.Windows.Forms.CheckBox()
         Me.chkPepperoni = New System.Windows.Forms.CheckBox()
         Me.chkOlives = New System.Windows.Forms.CheckBox()
-        Me.chkBasil = New System.Windows.Forms.CheckBox()
+        Me.chkAnchovies = New System.Windows.Forms.CheckBox()
         Me.chkHam = New System.Windows.Forms.CheckBox()
         Me.dateDeldate = New System.Windows.Forms.DateTimePicker()
         Me.txtDeltime = New System.Windows.Forms.MaskedTextBox()
@@ -237,15 +237,15 @@ Partial Class Pizza101
         Me.chkOlives.Text = "Olives"
         Me.chkOlives.UseVisualStyleBackColor = True
         '
-        'chkBasil
+        'chkAnchovies
         '
-        Me.chkBasil.AutoSize = True
-        Me.chkBasil.Location = New System.Drawing.Point(698, 88)
-        Me.chkBasil.Name = "chkBasil"
-        Me.chkBasil.Size = New System.Drawing.Size(60, 21)
-        Me.chkBasil.TabIndex = 15
-        Me.chkBasil.Text = "Basil"
-        Me.chkBasil.UseVisualStyleBackColor = True
+        Me.chkAnchovies.AutoSize = True
+        Me.chkAnchovies.Location = New System.Drawing.Point(698, 88)
+        Me.chkAnchovies.Name = "chkAnchovies"
+        Me.chkAnchovies.Size = New System.Drawing.Size(95, 21)
+        Me.chkAnchovies.TabIndex = 15
+        Me.chkAnchovies.Text = "Anchovies"
+        Me.chkAnchovies.UseVisualStyleBackColor = True
         '
         'chkHam
         '
@@ -433,7 +433,7 @@ Partial Class Pizza101
         Me.Controls.Add(Me.dateDeldate)
         Me.Controls.Add(Me.txtDeltime)
         Me.Controls.Add(Me.chkOlives)
-        Me.Controls.Add(Me.chkBasil)
+        Me.Controls.Add(Me.chkAnchovies)
         Me.Controls.Add(Me.chkHam)
         Me.Controls.Add(Me.chkPepperoni)
         Me.Controls.Add(Me.chkPineapple)
@@ -480,7 +480,7 @@ Partial Class Pizza101
     Friend WithEvents chkPineapple As CheckBox
     Friend WithEvents chkPepperoni As CheckBox
     Friend WithEvents chkOlives As CheckBox
-    Friend WithEvents chkBasil As CheckBox
+    Friend WithEvents chkAnchovies As CheckBox
     Friend WithEvents chkHam As CheckBox
     Friend WithEvents dateDeldate As DateTimePicker
     Friend WithEvents txtDeltime As MaskedTextBox
