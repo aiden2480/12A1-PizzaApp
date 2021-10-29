@@ -44,6 +44,31 @@
         orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482771824", "1 Taylor Street, Glebe", "2037", 5, "t",
                                   New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
 
+        ' Apply tooltips
+        tipHelp.SetToolTip(txtFirstName, "Enter your first name")
+        tipHelp.SetToolTip(txtLastName, "Enter your last name")
+        tipHelp.SetToolTip(txtPhoneno, "Enter your phone number") ' TODO fix phone number mask
+        tipHelp.SetToolTip(txtAddress, "Enter your street address (e.g. 23 Taylor street, Ryde)")
+        tipHelp.SetToolTip(txtPostcode, "Enter your postcode (e.g. 2000)")
+        tipHelp.SetToolTip(txtQuantity, "Enter the number of pizzas you wish to order")
+        tipHelp.SetToolTip(dateDeldate, "Enter the desired delivery date")
+        tipHelp.SetToolTip(txtDeltime, "Enter the desired delivery time in 24h (e.g. 1700)")
+
+        tipHelp.SetToolTip(chkThincrust, "Standard thin crust [$0.00]")
+        tipHelp.SetToolTip(chkThickcrust, "Double size crust [$2.00]")
+        tipHelp.SetToolTip(chkCheesecrust, "Cheese infused crust [$3.50]")
+
+        tipHelp.SetToolTip(chkMushroom, "Add mushrooms [$0.50]")
+        tipHelp.SetToolTip(chkPineapple, "Add pineapples free of charge because they belong on pizza [$0.00]")
+        tipHelp.SetToolTip(chkPepperoni, "Add pepperoni [$1.00]")
+        tipHelp.SetToolTip(chkHam, "Add ham [$1.00]")
+        tipHelp.SetToolTip(chkAnchovies, "Add anchovies for extra because they're gross [$2.00]")
+        tipHelp.SetToolTip(chkOlives, "Add olives [$0.75]")
+
+        tipHelp.SetToolTip(txtCrustcost, "The cost of the selected crust")
+        tipHelp.SetToolTip(txtToppingscost, "The cost of the selected toppings")
+        tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $8 base plus crust and toppings")
+
         ' Render all orders in the form box
         DisplayList()
     End Sub
