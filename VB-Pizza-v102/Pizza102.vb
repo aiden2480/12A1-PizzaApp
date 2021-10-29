@@ -32,6 +32,8 @@
 
     ' Establish variables
     Shared orders As New List(Of PizzaOrder)
+    Dim crustCost As Decimal
+    Dim toppingsCost As Decimal
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load test orders
@@ -67,13 +69,13 @@
 
         tipHelp.SetToolTip(txtCrustcost, "The cost of the selected crust")
         tipHelp.SetToolTip(txtToppingscost, "The cost of the selected toppings")
-        tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $8 base plus crust and toppings")
+        tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $11 base plus crust and toppings. A $3 delivery fee is added too")
 
         ' Render all orders in the form box
         DisplayList()
     End Sub
 
-    Private Sub addOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+    Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
         ' TODO Grab crust type and toppings
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
@@ -83,6 +85,11 @@
         ' Clear textboxes and load records
         ResetFields()
         DisplayList()
+
+        ' Reset the cost fields
+        CalculateCrustCost()
+        CalculateToppingsCost()
+        CalculateTotalCost()
     End Sub
 
     Private Sub DisplayList()
@@ -116,7 +123,7 @@
     End Sub
 
     ' Events fire from checkboxes and radio buttons being updated
-    Private Sub CalculateCrustCost(sender As Object, e As EventArgs) Handles chkThincrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
+    Private Sub CalculateCrustCost() Handles chkThincrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
         Dim cost As Decimal
 
         Select Case True
@@ -128,6 +135,7 @@
                 cost = 3.5
         End Select
 
+        crustCost = cost
         txtCrustcost.Text = FormatCurrency(cost)
     End Sub
 
@@ -153,9 +161,19 @@
             cost += 0.75
         End If
 
+        toppingsCost = cost
         txtToppingscost.Text = FormatCurrency(cost)
     End Sub
 
+    Private Sub CalculateTotalCost()
+        Dim cost As Decimal = 8     ' $8 base rate for a pizza
+
+        cost += crustCost + toppingsCost
+        cost *= Convert.ToDecimal(txtQuantity.Text)        ' Multiply cost by the number of pizzas
+        txtTotalcost.Text = FormatCurrency(cost + 3)  ' Add on delivery fees
+    End Sub
+
+    ' Event listeners
     Private Sub MushroomChecked(sender As Object, e As EventArgs) Handles chkMushroom.CheckedChanged
         CalculateToppingsCost()
     End Sub
@@ -178,5 +196,17 @@
 
     Private Sub OlivesChecked(sender As Object, e As EventArgs) Handles chkOlives.CheckedChanged
         CalculateToppingsCost()
+    End Sub
+
+    Private Sub CrustCostChanged(sender As Object, e As EventArgs) Handles txtCrustcost.TextChanged
+        CalculateTotalCost()
+    End Sub
+
+    Private Sub ToppingsCostChanged(sender As Object, e As EventArgs) Handles txtToppingscost.TextChanged
+        CalculateTotalCost()
+    End Sub
+
+    Private Sub QuantityChanged(sender As Object, e As EventArgs) Handles txtQuantity.TextChanged
+        CalculateTotalCost()
     End Sub
 End Class

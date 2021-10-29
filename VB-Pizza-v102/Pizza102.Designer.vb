@@ -398,7 +398,7 @@ Partial Class Pizza102
         Me.txtTotalcost.Size = New System.Drawing.Size(70, 20)
         Me.txtTotalcost.TabIndex = 100
         Me.txtTotalcost.TabStop = False
-        Me.txtTotalcost.Text = "$8.00"
+        Me.txtTotalcost.Text = "$11.00"
         '
         'Pizza102
         '
