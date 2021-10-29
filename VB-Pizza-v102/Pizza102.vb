@@ -1,4 +1,4 @@
-Public Class Pizza102
+﻿Public Class Pizza102
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -45,7 +45,7 @@ Public Class Pizza102
                                   New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
 
         ' Render all orders in the form box
-        displayList()
+        DisplayList()
     End Sub
 
     Private Sub addOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
@@ -56,11 +56,11 @@ Public Class Pizza102
                                   dateDeldate.Value, txtDeltime.Text))
 
         ' Clear textboxes and load records
-        resetFields()
-        displayList()
+        ResetFields()
+        DisplayList()
     End Sub
 
-    Private Sub displayList()
+    Private Sub DisplayList()
         txtStList.Items.Clear()
 
         ' Loop through the array to print all rows
@@ -71,7 +71,7 @@ Public Class Pizza102
         Next
     End Sub
 
-    Private Sub resetFields()
+    Private Sub ResetFields()
         txtFirstName.Text = ""
         txtLastName.Text = ""
         txtPhoneno.Text = ""
@@ -89,8 +89,9 @@ Public Class Pizza102
         chkAnchovies.Checked = False
         chkOlives.Checked = False
     End Sub
-    
-    Private Sub calculateCrustCost()
+
+    ' Events fire from checkboxes and radio buttons being updated
+    Private Sub CalculateCrustCost(sender As Object, e As EventArgs) Handles chkThincrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
         Dim cost As Decimal
 
         Select Case True
@@ -105,16 +106,52 @@ Public Class Pizza102
         txtCrustcost.Text = FormatCurrency(cost)
     End Sub
 
-    ' Events fire from checkboxes and radio buttons being updated
-    Private Sub thinCrustChanged(sender As Object, e As EventArgs) Handles chkThincrust.CheckedChanged
-        calculateCrustCost()
+    Private Sub CalculateToppingsCost()
+        Dim cost As Decimal = 0
+
+        If chkMushroom.Checked Then
+            cost += 0.5
+        End If
+        If chkPineapple.Checked Then
+            cost += 0   ' Pineapple is free because it belongs on pizza
+        End If
+        If chkPepperoni.Checked Then
+            cost += 1
+        End If
+        If chkHam.Checked Then
+            cost += 1
+        End If
+        If chkAnchovies.Checked Then
+            cost += 2   ' Anchovies are gross and don't belong on pizza
+        End If
+        If chkOlives.Checked Then
+            cost += 0.75
+        End If
+
+        txtToppingscost.Text = FormatCurrency(cost)
     End Sub
 
-    Private Sub thickCrustChanged(sender As Object, e As EventArgs) Handles chkThickcrust.CheckedChanged
-        calculateCrustCost()
+    Private Sub MushroomChecked(sender As Object, e As EventArgs) Handles chkMushroom.CheckedChanged
+        CalculateToppingsCost()
     End Sub
 
-    Private Sub cheeseCrustChanged(sender As Object, e As EventArgs) Handles chkCheesecrust.CheckedChanged
-        calculateCrustCost()
+    Private Sub PineappleChecked(sender As Object, e As EventArgs) Handles chkPineapple.CheckedChanged
+        CalculateToppingsCost()
+    End Sub
+
+    Private Sub PepperoniChecked(sender As Object, e As EventArgs) Handles chkPepperoni.CheckedChanged
+        CalculateToppingsCost()
+    End Sub
+
+    Private Sub HamChecked(sender As Object, e As EventArgs) Handles chkHam.CheckedChanged
+        CalculateToppingsCost()
+    End Sub
+
+    Private Sub AnchoviesChecked(sender As Object, e As EventArgs) Handles chkAnchovies.CheckedChanged
+        CalculateToppingsCost()
+    End Sub
+
+    Private Sub OlivesChecked(sender As Object, e As EventArgs) Handles chkOlives.CheckedChanged
+        CalculateToppingsCost()
     End Sub
 End Class
