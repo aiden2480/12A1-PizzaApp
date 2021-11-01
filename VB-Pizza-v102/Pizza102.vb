@@ -166,11 +166,11 @@
     End Sub
 
     Private Sub CalculateTotalCost()
-        Dim cost As Decimal = 8                       ' $8 base rate for a pizza
+        Dim cost As Decimal = 8 ' $8 base rate for a pizza
 
         cost += crustCost + toppingsCost
-        cost *= Convert.ToDecimal(txtQuantity.Text)   ' Multiply cost by the number of pizzas
-        txtTotalcost.Text = FormatCurrency(cost + 3)  ' Add on delivery fees
+        cost *= Convert.ToDecimal(If(IsNumeric(txtQuantity.Text), txtQuantity.Text, 0)) ' Multiply cost by the number of pizzas
+        txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
     End Sub
 
     ' Event listeners
@@ -207,6 +207,8 @@
     End Sub
 
     Private Sub QuantityChanged(sender As Object, e As EventArgs) Handles txtQuantity.TextChanged
-        CalculateTotalCost()
+        If IsNumeric(txtQuantity.Text) Then
+            CalculateTotalCost()
+        End If
     End Sub
 End Class
