@@ -34,7 +34,7 @@ Partial Class Pizza102
         Me.btnAddOrder = New System.Windows.Forms.Button()
         Me.txtStList = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.chkThincrust = New System.Windows.Forms.RadioButton()
+        Me.chkRegularcrust = New System.Windows.Forms.RadioButton()
         Me.chkThickcrust = New System.Windows.Forms.RadioButton()
         Me.chkCheesecrust = New System.Windows.Forms.RadioButton()
         Me.chkMushroom = New System.Windows.Forms.CheckBox()
@@ -155,18 +155,18 @@ Partial Class Pizza102
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "List of entered orders (for testing)"
         '
-        'chkThincrust
+        'chkRegularcrust
         '
-        Me.chkThincrust.AutoSize = True
-        Me.chkThincrust.Checked = True
-        Me.chkThincrust.Location = New System.Drawing.Point(354, 50)
-        Me.chkThincrust.Margin = New System.Windows.Forms.Padding(2)
-        Me.chkThincrust.Name = "chkThincrust"
-        Me.chkThincrust.Size = New System.Drawing.Size(72, 17)
-        Me.chkThincrust.TabIndex = 8
-        Me.chkThincrust.TabStop = True
-        Me.chkThincrust.Text = "Thin crust"
-        Me.chkThincrust.UseVisualStyleBackColor = True
+        Me.chkRegularcrust.AutoSize = True
+        Me.chkRegularcrust.Checked = True
+        Me.chkRegularcrust.Location = New System.Drawing.Point(354, 50)
+        Me.chkRegularcrust.Margin = New System.Windows.Forms.Padding(2)
+        Me.chkRegularcrust.Name = "chkRegularcrust"
+        Me.chkRegularcrust.Size = New System.Drawing.Size(88, 17)
+        Me.chkRegularcrust.TabIndex = 8
+        Me.chkRegularcrust.TabStop = True
+        Me.chkRegularcrust.Text = "Regular crust"
+        Me.chkRegularcrust.UseVisualStyleBackColor = True
         '
         'chkThickcrust
         '
@@ -429,7 +429,7 @@ Partial Class Pizza102
         Me.Controls.Add(Me.chkMushroom)
         Me.Controls.Add(Me.chkCheesecrust)
         Me.Controls.Add(Me.chkThickcrust)
-        Me.Controls.Add(Me.chkThincrust)
+        Me.Controls.Add(Me.chkRegularcrust)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtStList)
         Me.Controls.Add(Me.btnAddOrder)
@@ -461,7 +461,7 @@ Partial Class Pizza102
 
     Friend WithEvents txtStList As ListBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents chkThincrust As RadioButton
+    Friend WithEvents chkRegularcrust As RadioButton
     Friend WithEvents chkThickcrust As RadioButton
     Friend WithEvents chkCheesecrust As RadioButton
     Friend WithEvents chkMushroom As CheckBox

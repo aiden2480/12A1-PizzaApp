@@ -56,7 +56,7 @@
         tipHelp.SetToolTip(dateDeldate, "Enter the desired delivery date")
         tipHelp.SetToolTip(txtDeltime, "Enter the desired delivery time in 24h (e.g. 1700)")
 
-        tipHelp.SetToolTip(chkThincrust, "Standard thin crust [$0.00]")
+        tipHelp.SetToolTip(chkRegularcrust, "Standard crust size [$0.00]")
         tipHelp.SetToolTip(chkThickcrust, "Double size crust [$2.00]")
         tipHelp.SetToolTip(chkCheesecrust, "Cheese infused crust [$3.50]")
 
@@ -113,7 +113,7 @@
         dateDeldate.Text = ""
         txtDeltime.Text = ""
 
-        chkThincrust.Checked = True
+        chkRegularcrust.Checked = True
         chkMushroom.Checked = False
         chkPineapple.Checked = False
         chkPepperoni.Checked = False
@@ -123,11 +123,11 @@
     End Sub
 
     ' Events fire from checkboxes and radio buttons being updated
-    Private Sub CalculateCrustCost() Handles chkThincrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
+    Private Sub CalculateCrustCost() Handles chkRegularcrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
         Dim cost As Decimal
 
         Select Case True
-            Case chkThincrust.Checked
+            Case chkRegularcrust.Checked
                 cost = 0
             Case chkThickcrust.Checked
                 cost = 2
@@ -166,10 +166,10 @@
     End Sub
 
     Private Sub CalculateTotalCost()
-        Dim cost As Decimal = 8     ' $8 base rate for a pizza
+        Dim cost As Decimal = 8                       ' $8 base rate for a pizza
 
         cost += crustCost + toppingsCost
-        cost *= Convert.ToDecimal(txtQuantity.Text)        ' Multiply cost by the number of pizzas
+        cost *= Convert.ToDecimal(txtQuantity.Text)   ' Multiply cost by the number of pizzas
         txtTotalcost.Text = FormatCurrency(cost + 3)  ' Add on delivery fees
     End Sub
 
