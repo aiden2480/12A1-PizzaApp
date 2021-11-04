@@ -1,4 +1,4 @@
-﻿Public Class Pizza102
+Public Class Pizza102
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -8,7 +8,7 @@
         Public address As String
         Public postcode As String
         Public quantity As Byte             ' Max 255 pizzas
-        Public crustType As Char            ' t for thin / T for thick / c for cheese
+        Public crustType As Char            ' r for regular / t for thick / c for cheese
         Public toppings As List(Of String)
         Public deliveryDate As Date
         Public deliveryTime As String
@@ -32,14 +32,14 @@
 
     ' Establish variables
     Shared orders As New List(Of PizzaOrder)
-    Dim crustCost As Decimal
-    Dim toppingsCost As Decimal
+    Dim crustCost As Integer
+    Dim toppingsCost As Integer
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load test orders
         orders.Add(New PizzaOrder("Johnny", "Depp", "0431994732", "1 Kale Ave, Hollywood", "90027", 2, "c",
                                   New List(Of String) From {"mus", "pep", "ham"}, "9/6/63", "21:30"))
-        orders.Add(New PizzaOrder("George", "Clooney", "0472883930", "480 Harvest Lane, Kansas City", "64106", 1, "T",
+        orders.Add(New PizzaOrder("George", "Clooney", "0472883930", "480 Harvest Lane, Kansas City", "64106", 1, "r",
                                   New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
         orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482774012", "34 Strother Street, Ryde", "2112", 3, "t",
                                   New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
