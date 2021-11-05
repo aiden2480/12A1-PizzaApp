@@ -174,6 +174,40 @@ Public Class Pizza102
         txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
     End Sub
 
+    ' Convert crust and toppings codes to their proper form
+    Private Function ExpandPizzaCode(code As Char)
+        Return New Dictionary(Of Char, String) From {
+            {"r", "Regular"},
+            {"t", "Thick"},
+            {"c", "Cheesy"}
+        }(code)
+    End Function
+
+    Private Function ExpandToppings(toppings As List(Of String)) As String
+        Dim concat As String = ""
+        Dim conv As New Dictionary(Of String, String) From {
+            {"mus", "mushroom"},
+            {"pin", "pineapple"},
+            {"pep", "pepperoni"},
+            {"ham", "ham"},
+            {"anc", "anchovies"},
+            {"oli", "olives"}
+        }
+
+        For Each topping In toppings
+            concat += conv(topping) + ", "
+        Next
+
+        ' Deal with an edge case where the string might be empty because
+        ' no toppings were selected, in which case splicing the string
+        ' would break the program, so we check that the string isn't empty
+        If concat <> "" Then
+            concat = concat.Substring(0, concat.Length() - 2)
+        End If
+
+        Return If(concat <> "", concat, "No toppings")
+    End Function
+
     ' Event listeners
     Private Sub CrustRadioboxChanged() Handles chkRegularcrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
         CalculateCrustCost()
