@@ -174,35 +174,23 @@ Public Class Pizza102
     End Sub
 
     ' Event listeners
-    Private Sub MushroomChecked(sender As Object, e As EventArgs) Handles chkMushroom.CheckedChanged
+    Private Sub CrustRadioboxChanged() Handles chkRegularcrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
+        CalculateCrustCost()
+    End Sub
+
+    Private Sub MushroomPineapple(sender As Object, e As EventArgs) Handles chkMushroom.CheckedChanged, chkPineapple.CheckedChanged
         CalculateToppingsCost()
     End Sub
 
-    Private Sub PineappleChecked(sender As Object, e As EventArgs) Handles chkPineapple.CheckedChanged
+    Private Sub PepperoniHam(sender As Object, e As EventArgs) Handles chkPepperoni.CheckedChanged, chkHam.CheckedChanged
         CalculateToppingsCost()
     End Sub
 
-    Private Sub PepperoniChecked(sender As Object, e As EventArgs) Handles chkPepperoni.CheckedChanged
+    Private Sub AnchoviesOlives(sender As Object, e As EventArgs) Handles chkAnchovies.CheckedChanged, chkOlives.CheckedChanged
         CalculateToppingsCost()
     End Sub
 
-    Private Sub HamChecked(sender As Object, e As EventArgs) Handles chkHam.CheckedChanged
-        CalculateToppingsCost()
-    End Sub
-
-    Private Sub AnchoviesChecked(sender As Object, e As EventArgs) Handles chkAnchovies.CheckedChanged
-        CalculateToppingsCost()
-    End Sub
-
-    Private Sub OlivesChecked(sender As Object, e As EventArgs) Handles chkOlives.CheckedChanged
-        CalculateToppingsCost()
-    End Sub
-
-    Private Sub CrustCostChanged(sender As Object, e As EventArgs) Handles txtCrustcost.TextChanged
-        CalculateTotalCost()
-    End Sub
-
-    Private Sub ToppingsCostChanged(sender As Object, e As EventArgs) Handles txtToppingscost.TextChanged
+    Private Sub SubtotalChanged(sender As Object, e As EventArgs) Handles txtCrustcost.TextChanged, txtToppingscost.TextChanged
         CalculateTotalCost()
     End Sub
 
