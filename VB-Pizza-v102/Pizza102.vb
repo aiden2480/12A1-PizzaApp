@@ -31,7 +31,7 @@ Public Class Pizza102
     End Class
 
     ' Establish variables
-    Shared orders As New List(Of PizzaOrder)
+    Shared ReadOnly orders As New List(Of PizzaOrder)
     Dim crustCost As Integer
     Dim toppingsCost As Integer
 
@@ -182,13 +182,15 @@ Public Class Pizza102
         Return codes
     End Function
 
-    Private Sub CalculateTotalCost()
-        Dim cost As Decimal = 8 ' $8 base rate for a pizza
+    Private Function CalculateTotalCost() As Integer
+        Dim cost As Integer = 8 ' $8 base rate for a pizza
 
-        cost += crustCost + toppingsCost
+        cost += crustCost + toppingsCost ' TODO: Needs to be ".ToInteger"?
         cost *= Convert.ToDecimal(If(IsNumeric(txtQuantity.Text), txtQuantity.Text, 0)) ' Multiply cost by the number of pizzas
         txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
-    End Sub
+
+        return cost
+    End Function
 
     ' Convert crust and toppings codes to their proper form
     Private Function ExpandPizzaCode(code As Char)
