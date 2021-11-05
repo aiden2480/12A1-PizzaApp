@@ -61,7 +61,7 @@ Public Class Pizza102
         tipHelp.SetToolTip(chkCheesecrust, "Cheese infused crust [$3.50]")
 
         tipHelp.SetToolTip(chkMushroom, "Add mushrooms [$0.50]")
-        tipHelp.SetToolTip(chkPineapple, "Add pineapples free of charge because they belong on pizza [$0.00]")
+        tipHelp.SetToolTip(chkPineapple, "Add pineapples for cheap because they belong on pizza [$0.15]")
         tipHelp.SetToolTip(chkPepperoni, "Add pepperoni [$1.00]")
         tipHelp.SetToolTip(chkHam, "Add ham [$1.00]")
         tipHelp.SetToolTip(chkAnchovies, "Add anchovies for extra because they're gross [$2.00]")
@@ -146,7 +146,8 @@ Public Class Pizza102
             cost += 0.5
         End If
         If chkPineapple.Checked Then
-            cost += 0   ' Pineapple is free because it belongs on pizza
+            codes.Add("pin")
+            cost += 0.15 ' Pineapple is cheap because it belongs on pizza
         End If
         If chkPepperoni.Checked Then
             cost += 1
