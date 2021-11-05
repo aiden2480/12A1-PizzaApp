@@ -143,14 +143,16 @@ Public Class Pizza102
 
         crustCost = cost
         txtCrustcost.Text = FormatCurrency(cost)
-        
+
         Return code
     End Function
 
-    Private Sub CalculateToppingsCost()
-        Dim cost As Decimal = 0
-
+    Private Function CalculateToppingsCost() As List(Of String)
+        Dim codes As New List(Of String)
+        Dim cost As Integer = 0         ' TODO: Integer can't store decimal points!
+                                        ' Leaving this here now for the brownie error points
         If chkMushroom.Checked Then
+            codes.Add("mus")
             cost += 0.5
         End If
         If chkPineapple.Checked Then
@@ -158,21 +160,27 @@ Public Class Pizza102
             cost += 0.15 ' Pineapple is cheap because it belongs on pizza
         End If
         If chkPepperoni.Checked Then
+            codes.Add("pep")
             cost += 1
         End If
         If chkHam.Checked Then
+            codes.Add("ham")
             cost += 1
         End If
         If chkAnchovies.Checked Then
+            codes.Add("anc")
             cost += 2   ' Anchovies are gross and don't belong on pizza
         End If
         If chkOlives.Checked Then
+            codes.Add("oli")
             cost += 0.75
         End If
 
         toppingsCost = cost
         txtToppingscost.Text = FormatCurrency(cost)
-    End Sub
+
+        Return codes
+    End Function
 
     Private Sub CalculateTotalCost()
         Dim cost As Decimal = 8 ' $8 base rate for a pizza
