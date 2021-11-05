@@ -32,8 +32,8 @@ Public Class Pizza102
 
     ' Establish variables
     Shared ReadOnly orders As New List(Of PizzaOrder)
-    Dim crustCost As Integer
-    Dim toppingsCost As Integer
+    Dim crustCost As Double
+    Dim toppingsCost As Double
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load test orders
@@ -126,7 +126,7 @@ Public Class Pizza102
     '  1. Update cost text fields as the user changes checkboxes (from event changes)
     '  2. Concatenate text fields as required and return their values for processing 
     Private Function CalculateCrustCost() As Char
-        Dim cost As Integer
+        Dim cost As Double
         Dim code As Char
 
         Select Case True
@@ -149,8 +149,8 @@ Public Class Pizza102
 
     Private Function CalculateToppingsCost() As List(Of String)
         Dim codes As New List(Of String)
-        Dim cost As Integer = 0         ' TODO: Integer can't store decimal points!
-                                        ' Leaving this here now for the brownie error points
+        Dim cost As Double = 0
+        
         If chkMushroom.Checked Then
             codes.Add("mus")
             cost += 0.5
@@ -182,11 +182,11 @@ Public Class Pizza102
         Return codes
     End Function
 
-    Private Function CalculateTotalCost() As Integer
-        Dim cost As Integer = 8 ' $8 base rate for a pizza
+    Private Function CalculateTotalCost() As Double
+        Dim cost As Double = 8 ' $8 base rate for a pizza
 
-        cost += crustCost + toppingsCost ' TODO: Needs to be ".ToInteger"?
-        cost *= Convert.ToDecimal(If(IsNumeric(txtQuantity.Text), txtQuantity.Text, 0)) ' Multiply cost by the number of pizzas
+        cost += crustCost + toppingsCost
+        cost *= Convert.ToDouble(If(IsNumeric(txtQuantity.Text), txtQuantity.Text, 0)) ' Multiply cost by the number of pizzas
         txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
 
         return cost
