@@ -122,22 +122,30 @@ Public Class Pizza102
         chkOlives.Checked = False
     End Sub
 
-    ' Events fire from checkboxes and radio buttons being updated
-    Private Sub CalculateCrustCost() Handles chkRegularcrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
-        Dim cost As Decimal
+    ' These functions can be used in two different contexts:
+    '  1. Update cost text fields as the user changes checkboxes (from event changes)
+    '  2. Concatenate text fields as required and return their values for processing 
+    Private Function CalculateCrustCost() As Char
+        Dim cost As Integer
+        Dim code As Char
 
         Select Case True
             Case chkRegularcrust.Checked
+                code = "r"
                 cost = 0
             Case chkThickcrust.Checked
+                code = "t"
                 cost = 2
             Case chkCheesecrust.Checked
+                code = "c"
                 cost = 3.5
         End Select
 
         crustCost = cost
         txtCrustcost.Text = FormatCurrency(cost)
-    End Sub
+        
+        Return code
+    End Function
 
     Private Sub CalculateToppingsCost()
         Dim cost As Decimal = 0
