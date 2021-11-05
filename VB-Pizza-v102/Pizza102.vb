@@ -1,4 +1,4 @@
-Public Class Pizza102
+﻿Public Class Pizza102
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -79,7 +79,7 @@ Public Class Pizza102
         ' TODO Grab crust type and toppings
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
-                                  "t", New List(Of String) From {"mus", "pep", "pan"},
+                                  CalculateCrustCost(), CalculateToppingsCost(),
                                   dateDeldate.Value, txtDeltime.Text))
 
         ' Clear textboxes and load records
@@ -94,12 +94,14 @@ Public Class Pizza102
 
     Private Sub DisplayList()
         txtStList.Items.Clear()
+        Dim whitespace As New String(" ", 8)
 
         ' Loop through the array to print all rows
-        For i = 0 To orders.Count() - 1
-            txtStList.Items.Add(orders(i).orderID & " - " & orders(i).firstName & " - " &
-                                UCase(orders(i).lastName) & " - " & orders(i).deliveryDate & " - " &
-                                orders(i).postcode & " - " & orders(i).quantity)
+        For Each order In orders
+            txtStList.Items.Add(order.orderID & " • " & order.firstName & " " & UCase(order.lastName) & " • " &
+                                order.deliveryDate & " " & order.deliveryTime)
+            txtStList.Items.Add(whitespace & order.address & " " & order.postcode & " • " & order.phoneNo)
+            txtStList.Items.Add(whitespace & order.quantity & "x " & ExpandPizzaCode(order.crustType) & " crust • " & ExpandToppings(order.toppings))
         Next
     End Sub
 
