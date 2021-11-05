@@ -76,7 +76,6 @@
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
-        ' TODO Grab crust type and toppings
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
