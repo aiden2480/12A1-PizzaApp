@@ -10,7 +10,16 @@
 
 ## :bar_chart: Details
 Aiden Gardner 12SDD6 Year 12 Term 1 PizzaApp assessment 2021.
-A pizza ordering app written in visual basic .net
+A pizza ordering app written in visual basic .NET
+
+## :new: Releases
+Versions of this project are incremented using [`semantic versioning`](https://semver.org/). The most recent **stable** release can be found just under the `About` tab on this page, and is marked with the `Latest` tag. More releases are documented in the [`releases tab`](https://github.com/aiden2480/12A1-PizzaApp/releases), which includes unstable releases (marked with the orange `Pre-release` tag).
+The repository can be viewed at each point in time, and all stable versions, and most unstable versions have the compiled binary attached, although the source code is still provided.
+
+## :confused: Issues
+Known bugs are documented in the [issues tab](https://github.com/aiden2480/12A1-PizzaApp/issues?q=is%3Aissue). As it stands, the issue tab contains:
+- [x] #1 Pizza cost is rounded off
+    - The wrong datatype was being used to store the order cost, which resulted in a logic error where rounding occured where it was not wanted.
 
 ## :memo: Future features
 - [ ] Validate fields as the user types
