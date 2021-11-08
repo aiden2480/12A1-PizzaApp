@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -24,7 +24,7 @@
                 <th>Version name</th>
                 <th>Change notes</th>
             </tr>
-            <tr>
+            <tr id="v1-01-1">
                 <td>
                     <h2>v1.01.1</h2>
                     <a href="https://github.com/aiden2480/12A1-PizzaApp/releases/tag/v1.01.1-PizzaApp">Releases page</a><br>
@@ -44,6 +44,53 @@
                     Also set the tab order for the stubs, ensuring they work as expected for the user
                 </td>
             </tr>
+            <tr id="v1-01-2">
+                <td>
+                    Allow argument parsing to construct a <code>PizzaOrder</code> object
+                    <ul>
+                        <li>
+                            <code>PizzaOrder</code> objects can be initialised through the <code>New</code> keyword just like other objects. This saves numerous lines of code space<br>
+                            <img src="https://user-images.githubusercontent.com/19619206/140836150-7b0ea75d-3423-4fd6-a7c6-60569c318b1c.png" alt="PizzaOrder initialised through the New keyword" /><br>
+                            <img src="https://user-images.githubusercontent.com/19619206/140834695-503f52a9-9d67-46a8-a4e8-1fafb9b243e0.png" alt="Lines saved by new functionality" />
+                        </li>
+                        <li>Orders are now stored in a <code>List</code> collection, meaning the number of orders can be retreived with <code>orders.Count()</code>, eliminating the need for an <code>ordersCount</code> variable</li>
+                        <li>Screen elements were renamed internally from their default values to more accurate descriptions</li>
+                    </ul>
+                </td>
+            </tr>
         </table>
+
+        <script>
+            // TODO URL for version commit changes
+            const versions = ["v1.01.1", "v1.01.2", "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5"];
+            const regex = /v.+\.(.+)\..+/
+            
+            var version = versions[1]; // Use v1.01.2 as a test
+            var match = version.match(regex)[1];
+
+            var elem = document.createElement("td");
+            var vername = document.createElement("h2");
+            var rellink = document.createElement("a");
+            var exelink = document.createElement("a");
+            var ziplink = document.createElement("a");
+
+            vername.innerText = version;
+            rellink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/tag/${version}-PizzaApp`;
+            exelink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/download/${version}-PizzaApp/Pizza1${match}.exe`;
+            ziplink.href = `https://github.com/aiden2480/12A1-PizzaApp/archive/refs/tags/${version}-PizzaApp.zip`;
+
+            rellink.innerText = "Releases page"
+            exelink.innerText = "Binary download"
+            ziplink.innerText = "ZIP version download"
+
+            elem.appendChild(vername);
+            elem.appendChild(rellink);
+            elem.innerHTML += "<br>";
+            elem.appendChild(exelink);
+            elem.innerHTML += "<br>";
+            elem.appendChild(ziplink);
+
+            document.getElementById("v1-01-2").prepend(elem);
+        </script>
     </body>
 </html>
