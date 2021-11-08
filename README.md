@@ -26,3 +26,7 @@ Known bugs are documented in the [issues tab](https://github.com/aiden2480/12A1-
 - [ ] Fill out toppings based on an option select to prefill a pizza type e.g. Hawaiian
 - [ ] Add sides/drinks/dessert
 - [ ] Add colour scheme
+- [ ] Either add a basic website, or set the website to be the readme
+- [ ] Generate links for each of the versions via JavaScript rather than hard coded.
+- [ ] Add patch version to each release, recompile binaries, and reupload to github.
+- [ ] Separate branch for editing the website
