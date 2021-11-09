@@ -66,6 +66,27 @@
                     </ul>
                 </td>
             </tr>
+            <tr id="v1-02-1">
+                <td>
+                    <ul>
+                        <li>Calculate pizza cost as the user edits the fields and checks/unchecks the radio/checkboxes</li>
+                        <li>Tooltips were also added on hover for all screen elements to provide more details</li>
+                        <li>Readme was updated from the default one, badges and emojis were added for more colour</li>
+                    </ul>
+                    <img src="https://user-images.githubusercontent.com/19619206/139375156-fc916085-3ba1-42e1-a7ea-cc9767fb7b3b.png" alt="Calculate pizza costs" />
+                </td>
+            </tr>
+            <tr id="v1-02-2">
+                <td>
+                    The total cost calculations are only updated once the quantity field has been confirmed as valid.<br>
+                    An error was occuring where the user would delete the value of the quantity field, causing the calculation<br>
+                    event to fire, and the program would break as an empty value could not be converted to an integer.<br>
+                    <br>
+
+                    This was mitigated through the use of the <code>IsNumeric</code> function, which means the <code>calculateTotalCost</code><br>
+                    function is only run when input can be resolved as valid.
+                </td>
+            </tr>
         </table>
 
         <script>
