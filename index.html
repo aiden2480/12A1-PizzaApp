@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -38,12 +38,7 @@
                 <th>Change notes</th>
             </tr>
             <tr id="v1-01-1">
-                <td>
-                    <h2>v1.01.1</h2>
-                    <a href="https://github.com/aiden2480/12A1-PizzaApp/releases/tag/v1.01.1-PizzaApp">Releases page</a><br>
-                    <a href="https://github.com/aiden2480/12A1-PizzaApp/releases/download/v1.01.1-PizzaApp/Pizza101.exe">Binary download</a><br>
-                    <a href="https://github.com/aiden2480/12A1-PizzaApp/archive/refs/tags/v1.01.1-PizzaApp.zip">ZIP version download</a>
-                </td>
+                <!-- The first column in each row is generated via JavaScript -->
                 <td>
                     Add stub screen elements for the order including
                     <ul>
@@ -78,32 +73,40 @@
             const versions = ["v1.01.1", "v1.01.2", "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5"];
             const regex = /v.+\.(.+)\..+/
             
-            var version = versions[1]; // Use v1.01.2 as a test
-            var match = version.match(regex)[1];
+            versions.forEach((version, index) => {
+                let id = version.replaceAll(".", "-")
+                let outer = document.getElementById(id);
+                if (!outer) return; // Skip if element missing
 
-            var elem = document.createElement("td");
-            var vername = document.createElement("h2");
-            var rellink = document.createElement("a");
-            var exelink = document.createElement("a");
-            var ziplink = document.createElement("a");
+                // Create elements
+                let match = version.match(regex)[1];
+                let elem = document.createElement("td");
+                let vername = document.createElement("h2");
+                let rellink = document.createElement("a");
+                let exelink = document.createElement("a");
+                let ziplink = document.createElement("a");
 
-            vername.innerText = version;
-            rellink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/tag/${version}-PizzaApp`;
-            exelink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/download/${version}-PizzaApp/Pizza1${match}.exe`;
-            ziplink.href = `https://github.com/aiden2480/12A1-PizzaApp/archive/refs/tags/${version}-PizzaApp.zip`;
+                // Apply properties
+                vername.innerText = version;
+                rellink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/tag/${version}-PizzaApp`;
+                exelink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/download/${version}-PizzaApp/Pizza1${match}.exe`;
+                ziplink.href = `https://github.com/aiden2480/12A1-PizzaApp/archive/refs/tags/${version}-PizzaApp.zip`;
 
-            rellink.innerText = "Releases page"
-            exelink.innerText = "Binary download"
-            ziplink.innerText = "ZIP version download"
+                rellink.innerText = "Releases page"
+                exelink.innerText = "Binary download"
+                ziplink.innerText = "ZIP version download"
 
-            elem.appendChild(vername);
-            elem.appendChild(rellink);
-            elem.innerHTML += "<br>";
-            elem.appendChild(exelink);
-            elem.innerHTML += "<br>";
-            elem.appendChild(ziplink);
+                // Concatonate to node
+                elem.appendChild(vername);
+                elem.appendChild(rellink);
+                elem.innerHTML += "<br>";
+                elem.appendChild(exelink);
+                elem.innerHTML += "<br>";
+                elem.appendChild(ziplink);
 
-            document.getElementById("v1-01-2").prepend(elem);
+                // Append node
+                outer.prepend(elem);
+            });
         </script>
     </body>
 </html>
