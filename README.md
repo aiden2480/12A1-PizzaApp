@@ -18,7 +18,7 @@ The repository can be viewed at each point in time, and all stable versions, and
 
 ## :confused: Issues
 Known bugs are documented in the [issues tab](https://github.com/aiden2480/12A1-PizzaApp/issues?q=is%3Aissue). As it stands, the issue tab contains:
-- [x] #1 Pizza cost is rounded off
+- [x] [#1 Pizza cost is rounded off](https://github.com/aiden2480/12A1-PizzaApp/issues/1)
     - The wrong datatype was being used to store the order cost, which resulted in a logic error where rounding occured where it was not wanted.
 
 ## :memo: Future features
@@ -26,8 +26,11 @@ Known bugs are documented in the [issues tab](https://github.com/aiden2480/12A1-
 - [ ] Fill out toppings based on an option select to prefill a pizza type e.g. Hawaiian
 - [ ] Add sides/drinks/dessert
 - [ ] Add colour scheme
-- [ ] Either add a basic website, or set the website to be the readme
-- [ ] Generate links for each of the versions via JavaScript rather than hard coded.
+- [ ] Set window icon to pizza image
 - [ ] Add patch version to each release, recompile binaries, and reupload to github.
+- [ ] Add an attribute of `PizzaOrder` that displays the total cost of the order in the orders list
+- [ ] Able to tick off each order as already delivered
 - [x] Separate branch for editing the website
     - [website branch](https://github.com/aiden2480/12A1-PizzaApp/tree/website)
+- [x] Generate links for each of the versions via JavaScript rather than hard coded.
+    - Added in commit `ad5555a` and [PR #2](https://github.com/aiden2480/12A1-PizzaApp/pull/2)
