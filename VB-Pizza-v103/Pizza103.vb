@@ -1,4 +1,4 @@
-﻿Public Class Pizza103
+Public Class Pizza103
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -76,6 +76,19 @@
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        ' First and last name validation
+        If txtFirstName.Text = "" Then
+            txtFirstName.Focus()
+            MsgBox("Please enter your firstname")
+            Return
+        End If
+
+        If txtLastName.Text = "" Then
+            txtLastName.Focus()
+            MsgBox("Please enter your lastname")
+            Return
+        End If
+
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
