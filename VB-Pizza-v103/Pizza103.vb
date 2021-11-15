@@ -1,4 +1,4 @@
-Public Class Pizza103
+﻿Public Class Pizza103
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -51,8 +51,8 @@ Public Class Pizza103
         tipHelp.SetToolTip(txtLastName, "Enter your last name")
         tipHelp.SetToolTip(txtPhoneno, "Enter your phone number") ' TODO fix phone number mask
         tipHelp.SetToolTip(txtAddress, "Enter your street address (e.g. 23 Taylor street, Ryde)")
-        tipHelp.SetToolTip(txtPostcode, "Enter your postcode (e.g. 2000)")
-        tipHelp.SetToolTip(txtQuantity, "Enter the number of pizzas you wish to order")
+        tipHelp.SetToolTip(txtPostcode, "Enter your postcode (e.g. 2000, 4 digits max)")
+        tipHelp.SetToolTip(txtQuantity, "Enter the number of pizzas you wish to order (3 digits max)")
         tipHelp.SetToolTip(dateDeldate, "Enter the desired delivery date")
         tipHelp.SetToolTip(txtDeltime, "Enter the desired delivery time in 24h (e.g. 1700)")
 
@@ -198,9 +198,14 @@ Public Class Pizza103
 
     Private Function CalculateTotalCost() As Double
         Dim cost As Double = 8 ' $8 base rate for a pizza
+        Dim quantity As Integer
+
+        If Not Integer.TryParse(txtQuantity.Text, quantity) Then
+            Return 0 ' Invalid quantity field
+        End If
 
         cost += crustCost + toppingsCost
-        cost *= Convert.ToDouble(If(IsNumeric(txtQuantity.Text), txtQuantity.Text, 0)) ' Multiply cost by the number of pizzas
+        cost *= quantity                             ' Multiply cost by the number of pizzas
         txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
 
         return cost
@@ -262,8 +267,6 @@ Public Class Pizza103
     End Sub
 
     Private Sub QuantityChanged(sender As Object, e As EventArgs) Handles txtQuantity.TextChanged
-        If IsNumeric(txtQuantity.Text) Then
-            CalculateTotalCost()
-        End If
+        CalculateTotalCost()
     End Sub
 End Class
