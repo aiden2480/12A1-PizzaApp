@@ -1,4 +1,6 @@
-﻿Public Class Pizza103
+Imports System.Text.RegularExpressions
+
+Public Class Pizza103
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -90,6 +92,22 @@
         If txtLastName.Text = "" Then
             txtLastName.Focus()
             MsgBox("Please enter your lastname")
+            Return
+        End If
+
+        ' Validate postcode
+        Dim postcodeRegex = New Regex("\d{4}")
+        Dim postcodeMatch = postcodeRegex.Match(txtPostcode.Text)
+
+        If txtPostcode.Text = "" Then
+            txtPostcode.Focus()
+            MsgBox("Please enter a valid Australian postcode (4 digits)")
+            Return
+        End If
+
+        If Not postcodeMatch.Success Then
+            txtPostcode.Focus()
+            MsgBox("Postcode couldn't be validated as four digits. Please recheck before submitting")
             Return
         End If
 
@@ -219,7 +237,7 @@
     Private Function CalculateToppingsCost() As List(Of String)
         Dim codes As New List(Of String)
         Dim cost As Double = 0
-        
+
         If chkMushroom.Checked Then
             codes.Add("mus")
             cost += 0.5
@@ -263,7 +281,7 @@
         cost *= quantity                             ' Multiply cost by the number of pizzas
         txtTotalcost.Text = FormatCurrency(cost + 3) ' Add on delivery fees
 
-        return cost
+        Return cost
     End Function
 
     ' Convert crust and toppings codes to their proper form
