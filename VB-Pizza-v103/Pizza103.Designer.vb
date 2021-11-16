@@ -291,7 +291,7 @@ Partial Class Pizza103
         '
         Me.txtPhoneno.Location = New System.Drawing.Point(321, 60)
         Me.txtPhoneno.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtPhoneno.Mask = "(999) 000-0000"
+        Me.txtPhoneno.Mask = "\0400-000-000"
         Me.txtPhoneno.Name = "txtPhoneno"
         Me.txtPhoneno.Size = New System.Drawing.Size(100, 22)
         Me.txtPhoneno.TabIndex = 2
@@ -299,12 +299,12 @@ Partial Class Pizza103
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(317, 36)
+        Me.Label4.Location = New System.Drawing.Point(323, 36)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 17)
+        Me.Label4.Size = New System.Drawing.Size(93, 17)
         Me.Label4.TabIndex = 29
-        Me.Label4.Text = "Phone number"
+        Me.Label4.Text = "Mobile phone"
         '
         'txtPostcode
         '

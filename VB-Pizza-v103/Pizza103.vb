@@ -38,13 +38,13 @@
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load test orders
-        orders.Add(New PizzaOrder("Johnny", "Depp", "0431994732", "1 Kale Ave, Hollywood", "90027", 2, "c",
+        orders.Add(New PizzaOrder("Johnny", "Depp", "0431-994-732", "1 Kale Ave, Hollywood", "90027", 2, "c",
                                   New List(Of String) From {"mus", "pep", "ham"}, "9/6/63", "21:30"))
-        orders.Add(New PizzaOrder("George", "Clooney", "0472883930", "480 Harvest Lane, Kansas City", "64106", 1, "r",
+        orders.Add(New PizzaOrder("George", "Clooney", "0472-883-930", "480 Harvest Lane, Kansas City", "64106", 1, "r",
                                   New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
-        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482774012", "34 Strother Street, Ryde", "2112", 3, "t",
+        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482-774-012", "34 Strother Street, Ryde", "2112", 3, "t",
                                   New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
-        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482771824", "1 Taylor Street, Glebe", "2037", 5, "t",
+        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482-771-824", "1 Taylor Street, Glebe", "2037", 5, "t",
                                   New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
 
         ' Apply tooltips
@@ -90,6 +90,14 @@
         If txtLastName.Text = "" Then
             txtLastName.Focus()
             MsgBox("Please enter your lastname")
+            Return
+        End If
+
+        ' Validate phone number
+        ' The mask already does a decent amount for us
+        If txtPhoneno.Text.Contains(" ") Then
+            txtPhoneno.Focus()
+            MsgBox("Please enter a valid Australian mobile phone number")
             Return
         End If
 
