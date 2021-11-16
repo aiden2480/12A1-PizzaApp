@@ -1,4 +1,4 @@
-﻿Public Class Pizza103
+Public Class Pizza103
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -34,6 +34,7 @@
     Shared ReadOnly orders As New List(Of PizzaOrder)
     Dim crustCost As Double
     Dim toppingsCost As Double
+    Dim resetting As Boolean = False
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load test orders
@@ -152,14 +153,16 @@
     End Sub
 
     Private Sub ResetFields()
-        txtFirstName.Text = ""
-        txtLastName.Text = ""
-        txtPhoneno.Text = ""
-        txtAddress.Text = ""
-        txtPostcode.Text = ""
-        txtQuantity.Text = ""
-        dateDeldate.Text = ""
-        txtDeltime.Text = ""
+        resetting = True
+
+        txtFirstName.ResetText()
+        txtLastName.ResetText()
+        txtPhoneno.ResetText()
+        txtAddress.ResetText()
+        txtPostcode.ResetText()
+        txtQuantity.ResetText()
+        dateDeldate.ResetText()
+        txtDeltime.ResetText()
 
         chkRegularcrust.Checked = True
         chkMushroom.Checked = False
@@ -168,6 +171,8 @@
         chkHam.Checked = False
         chkAnchovies.Checked = False
         chkOlives.Checked = False
+
+        resetting = False
     End Sub
 
     ' These functions can be used in two different contexts:
@@ -281,26 +286,38 @@
 
     ' Event listeners
     Private Sub CrustRadioboxChanged() Handles chkRegularcrust.CheckedChanged, chkThickcrust.CheckedChanged, chkCheesecrust.CheckedChanged
-        CalculateCrustCost()
+        If Not resetting Then
+            CalculateCrustCost()
+        End If
     End Sub
 
     Private Sub MushroomPineapple(sender As Object, e As EventArgs) Handles chkMushroom.CheckedChanged, chkPineapple.CheckedChanged
-        CalculateToppingsCost()
+        If Not resetting Then
+            CalculateToppingsCost()
+        End If
     End Sub
 
     Private Sub PepperoniHam(sender As Object, e As EventArgs) Handles chkPepperoni.CheckedChanged, chkHam.CheckedChanged
-        CalculateToppingsCost()
+        If Not resetting Then
+            CalculateToppingsCost()
+        End If
     End Sub
 
     Private Sub AnchoviesOlives(sender As Object, e As EventArgs) Handles chkAnchovies.CheckedChanged, chkOlives.CheckedChanged
-        CalculateToppingsCost()
+        If Not resetting Then
+            CalculateToppingsCost()
+        End If
     End Sub
 
     Private Sub SubtotalChanged(sender As Object, e As EventArgs) Handles txtCrustcost.TextChanged, txtToppingscost.TextChanged
-        CalculateTotalCost()
+        If Not resetting Then
+            CalculateTotalCost()
+        End If
     End Sub
 
     Private Sub QuantityChanged(sender As Object, e As EventArgs) Handles txtQuantity.TextChanged
-        CalculateTotalCost()
+        If Not resetting Then
+            CalculateTotalCost()
+        End If
     End Sub
 End Class
