@@ -52,7 +52,7 @@ Public Class Pizza103
         ' Apply tooltips
         tipHelp.SetToolTip(txtFirstName, "Enter your first name")
         tipHelp.SetToolTip(txtLastName, "Enter your last name")
-        tipHelp.SetToolTip(txtPhoneno, "Enter your phone number") ' TODO fix phone number mask
+        tipHelp.SetToolTip(txtPhoneno, "Enter your phone number")
         tipHelp.SetToolTip(txtAddress, "Enter your street address (e.g. 23 Taylor street, Ryde)")
         tipHelp.SetToolTip(txtPostcode, "Enter your postcode (e.g. 2000, 4 digits max)")
         tipHelp.SetToolTip(txtQuantity, "Enter the number of pizzas you wish to order (3 digits max)")
@@ -92,6 +92,21 @@ Public Class Pizza103
         If txtLastName.Text = "" Then
             txtLastName.Focus()
             MsgBox("Please enter your lastname")
+            Return
+        End If
+
+        ' Validate phone number
+        ' The mask already does a decent amount for us
+        If txtPhoneno.Text.Contains(" ") Then
+            txtPhoneno.Focus()
+            MsgBox("Please enter a valid Australian mobile phone number")
+            Return
+        End If
+
+        ' Validate address
+        If txtAddress.Text = "" Then
+            txtAddress.Focus()
+            MsgBox("Please enter the delivery address")
             Return
         End If
 
