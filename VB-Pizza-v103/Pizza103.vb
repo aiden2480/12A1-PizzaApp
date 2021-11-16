@@ -1,4 +1,4 @@
-Public Class Pizza103
+﻿Public Class Pizza103
     ' Set up a class for each order
     Class PizzaOrder
         Public orderID As Short
@@ -114,13 +114,21 @@ Public Class Pizza103
 
         ' First check if selected date is tomorrow or later, in which case we don't need to check time
         ' If it isn't we check that the time is greater than 20 mins from now
-        If Not selectedDate > Date.Today() AndAlso Not selectedTime >= Date.Now().AddMinutes(20) Then
+        If Not selectedDate > Date.Today() AndAlso Not selectedTime >= Date.Now().AddMinutes(19) Then
             Select Case MsgBox("Order needs to be at least 20 mins from now. Update field?", MsgBoxStyle.YesNo)
                 Case MsgBoxResult.Yes
                     txtDeltime.Text = Date.Now().AddMinutes(20).ToString("HH:mm")
                 Case MsgBoxResult.No
                     txtDeltime.Focus()
                     Return
+            End Select
+        End If
+
+        ' Check if no toppings are selected
+        If ExpandToppings(CalculateToppingsCost()) = "No toppings" Then
+            Select Case MsgBox("A bare cheese pizza isn't very tasty, are you sure you want to proceed with no toppings?", MsgBoxStyle.OkCancel)
+                Case MsgBoxResult.Cancel
+                    Return ' Stop validating to let the user change options
             End Select
         End If
 
