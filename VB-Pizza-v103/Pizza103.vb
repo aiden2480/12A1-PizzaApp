@@ -71,6 +71,9 @@
         tipHelp.SetToolTip(txtToppingscost, "The cost of the selected toppings")
         tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $11 base plus crust and toppings. A $3 delivery fee is added too")
 
+        ' Set the minimum date to today so we don't have to validate date
+        dateDeldate.MinDate = Date.Today()
+
         ' Render all orders in the form box
         DisplayList()
     End Sub
@@ -87,6 +90,37 @@
             txtLastName.Focus()
             MsgBox("Please enter your lastname")
             Return
+        End If
+
+        ' Validate order date and time
+        Dim selectedDate = Date.Parse(dateDeldate.Value.ToShortDateString())
+        Dim todayShort = Date.Today().ToShortDateString()
+        Dim selectedTime As Date
+
+        ' Field was blank, this is the default for some reason
+        If txtDeltime.Text = "  :" Then
+            txtDeltime.Focus()
+            MsgBox("Please enter a delivery time for more than 20 mins from now")
+            Return
+        End If
+
+        ' Try and parse the time into a valid object
+        If Not Date.TryParse(todayShort + " " + txtDeltime.Text, selectedTime) Then
+            txtDeltime.Focus()
+            MsgBox("Couldn't convert '" + txtDeltime.Text + "' to a valid 24h time")
+            Return
+        End If
+
+        ' First check if selected date is tomorrow or later, in which case we don't need to check time
+        ' If it isn't we check that the time is greater than 20 mins from now
+        If Not selectedDate > Date.Today() AndAlso Not selectedTime >= Date.Now().AddMinutes(20) Then
+            Select Case MsgBox("Order needs to be at least 20 mins from now. Update field?", MsgBoxStyle.YesNo)
+                Case MsgBoxResult.Yes
+                    txtDeltime.Text = Date.Now().AddMinutes(20).ToString("HH:mm")
+                Case MsgBoxResult.No
+                    txtDeltime.Focus()
+                    Return
+            End Select
         End If
 
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
