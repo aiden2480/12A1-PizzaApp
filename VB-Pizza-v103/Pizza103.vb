@@ -1,4 +1,4 @@
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class Pizza103
     ' Set up a class for each order
@@ -126,12 +126,27 @@ Public Class Pizza103
             Return
         End If
 
-        ' Validate phone number
-        ' The mask already does a decent amount for us
-        If txtPhoneno.Text.Contains(" ") Then
-            txtPhoneno.Focus()
-            MsgBox("Please enter a valid Australian mobile phone number")
+        ' Validate quantity (No more than 30 pizzas?)
+        Dim quantity As Integer
+
+        If Not Integer.TryParse(txtQuantity.Text, quantity) Then
+            txtQuantity.Focus()
+            MsgBox("Couldn't convert '" + txtQuantity.Text + "' to a valid non-zero integer")
             Return
+        End If
+
+        If quantity < 1 Then
+            txtQuantity.Focus()
+            MsgBox("You have to order at least one pizza")
+            Return
+        End If
+
+        If quantity > 30 Then
+            Select Case MsgBox("That's a lot of pizza, are you sure you want to order " + txtQuantity.Text + " pizzas?", MsgBoxStyle.OkCancel)
+                Case MsgBoxResult.Cancel
+                    txtQuantity.Focus()
+                    Return
+            End Select
         End If
 
         ' Validate order date and time
@@ -288,7 +303,7 @@ Public Class Pizza103
         Dim cost As Double = 8 ' $8 base rate for a pizza
         Dim quantity As Integer
 
-        If Not Integer.TryParse(txtQuantity.Text, quantity) Then
+        If Not Integer.TryParse(txtQuantity.Text, quantity) Or quantity < 1 Then
             Return 0 ' Invalid quantity field
         End If
 
