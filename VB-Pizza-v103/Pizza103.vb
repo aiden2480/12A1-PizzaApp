@@ -160,7 +160,7 @@ Public Class Pizza103
         txtPhoneno.ResetText()
         txtAddress.ResetText()
         txtPostcode.ResetText()
-        txtQuantity.ResetText()
+        txtQuantity.Text = "1"
         dateDeldate.ResetText()
         txtDeltime.ResetText()
 
