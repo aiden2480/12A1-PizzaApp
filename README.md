@@ -30,7 +30,8 @@ Known bugs are documented in the [issues tab](https://github.com/aiden2480/12A1-
 - [ ] Add patch version to each release, recompile binaries, and reupload to github.
 - [ ] Add an attribute of `PizzaOrder` that displays the total cost of the order in the orders list
 - [ ] Able to tick off each order as already delivered
+- [ ] JSON serialise/deserialise objects to allow for writing orders to the file system
 - [x] Separate branch for editing the website
     - [website branch](https://github.com/aiden2480/12A1-PizzaApp/tree/website)
 - [x] Generate links for each of the versions via JavaScript rather than hard coded.
-    - Added in commit `ad5555a` and [PR #2](https://github.com/aiden2480/12A1-PizzaApp/pull/2)
+    - Added in commit [`ad5555a`](https://github.com/aiden2480/12A1-PizzaApp/commit/ad5555a170e713ca57fd310bf9275f141469b41a) and [PR #2](https://github.com/aiden2480/12A1-PizzaApp/pull/2)
