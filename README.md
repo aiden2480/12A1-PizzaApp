@@ -20,7 +20,7 @@ The repository can be viewed at each point in time, and all stable versions, and
 Known bugs are documented in the [issues tab](https://github.com/aiden2480/PizzaApp/issues?q=is%3Aissue). As it stands, the issue tab contains:
 - [x] [#1 Pizza cost is rounded off](https://github.com/aiden2480/PizzaApp/issues/1)
     - The wrong datatype was being used to store the order cost, which resulted in a logic error where rounding occured where it was not wanted.
-- [ ] [#2 Logic errors in validation](https://github.com/aiden2480/PizzaApp/issues/2)
+- [ ] [#3 Logic errors in validation](https://github.com/aiden2480/PizzaApp/issues/3)
     - Blank endings on phone number are still valid
     - First name + last name can have non alphabetical characters
     - Quantity field should be simplified in warnings if putting in decimal places
