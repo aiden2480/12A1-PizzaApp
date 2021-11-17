@@ -114,12 +114,43 @@
                     (View release on GitHub for more information)
                 </td>
             </tr>
+            <tr id="v1-02-4">
+                <td>
+                    The subroutines for calculating the cost of toppings, crust, and the total cost, have all been converted in functions,
+                    allowing them to return values.
+                    <ul>
+                        <li><code>CalculateCrustCost</code> will return a single <code>Char</code> which represents the selected crust type</li>
+                        <li><code>CalcualteToppingsCost</code> returns a <code>List</code> of codes representing the shortened names of the selected toppings</li>
+                        <li><code>CalculateTotalCost</code> will return the total cost of the order, which can be attached to the <code>PizzaOrder</code> object at a later date.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr id="v1-02-5">
+                <td>
+                    Order details are now concatonated in a much more aesthetic manner. Each is as follows
+                    <ol>
+                        <li>The name of the person ordering, along with the order date and time</li>
+                        <li>The delivery address and postcode of the order, along with the telephone number</li>
+                        <li>The quantity, crust type, and toppings on the pizza</li>
+                    </ol>
+
+                    A future version may implement:
+                    <ul>
+                        <li>A cost indicator for each order in the list</li>
+                        <li>A boolean indicating if the order has been completed, and delivered</li>
+                    </ul>
+                </td>
+            </tr>
         </table>
         <i>Part of this website was generated with JavaScript! See the <a href="https://github.com/aiden2480/12A1-PizzaApp/blob/master/index.html">source code here</a></i>
 
         <script>
             // TODO URL for version commit changes
-            const versions = ["v1.01.1", "v1.01.2", "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5"];
+            const versions = [
+                "v1.01.1", "v1.01.2",
+                "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5",
+                "v1.03.1", "v1.03.2", "v1.03.3", "v1.03.4", "v1.03.5", "v1.03.6",
+            ];
             const regex = /v.+\.(.+)\..+/
             
             versions.forEach((version, index) => {
