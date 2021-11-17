@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -261,6 +261,11 @@
 
                 // Append node
                 outer.prepend(elem);
+            });
+
+            [...document.getElementsByTagName("a")].forEach(elem => {
+                if (elem.href.endsWith(".exe") || elem.href.endsWith(".zip")) return
+                elem.target = "_blank";
             });
         </script>
     </body>
