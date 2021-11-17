@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -153,6 +153,34 @@
             <tr class="vspan">
                 <td colspan="2">
                     <i>Version three is focused on validation of input fields</i>
+                </td>
+            </tr>
+            <tr id="v1-03-1">
+                <td>
+                    Validate first and last name fields<br>
+                    The first and last name fields will be validated as non-empty on form submit.
+                    I decided to do it on submit, rather than on change, or on field exit, because those are really annoying when you get the popup boxes while trying to edit other things.<br>
+
+                    The quantity field will also be validated as an Integer rather than Numeric, because Numeric would still validate the input 1.5, and you can't have half a pizza.
+                </td>
+            </tr>
+            <tr id="v1-03-2">
+                <td>
+                    Validate date and time fields<br>
+                    The delivery date must be at least 20 mins from the time of ordering. If date isn't beyond that time,
+                    the program will provide a popup message box asking the user if they want to set delivery time to exactly 20 mins from now.
+                </td>
+            </tr>
+            <tr id="v1-03-3">
+                <td>
+                    Don't run update cost funcs while form being reset. I used the debugging functionality of Visual Studio to help preview the values of variables as they change.<br>
+
+                    A runtime error (infinite recursion error) was appearing when the form was being reset via code. The error was occurring where the form was being reset, meaning the <code>TextChanged</code>
+                    handlers were running, updating the costs, running the handlers, updating the costs, etc, and the program crashed in an infinite loop. This was fixed by adding a boolean <code>resetting</code>
+                    to only run the update cost functions when the form isn't in the stage of being reset
+
+                    <img src="https://user-images.githubusercontent.com/19619206/142128195-7326618b-32c6-4347-b517-44dab216d840.png" alt="Visual Studio breakpoints" width="800" />
+                    <img src="https://user-images.githubusercontent.com/19619206/142128180-949c78ee-1248-43ae-a199-10d036737257.png" alt="Local variable scope debugging" width="800" />
                 </td>
             </tr>
         </table>
