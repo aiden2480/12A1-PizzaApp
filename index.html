@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -232,16 +232,19 @@
                 let rellink = document.createElement("a");
                 let exelink = document.createElement("a");
                 let ziplink = document.createElement("a");
+                let chnglog = document.createElement("a");
 
                 // Apply properties
                 vername.innerText = version;
                 rellink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/tag/${version}-PizzaApp`;
                 exelink.href = `https://github.com/aiden2480/12A1-PizzaApp/releases/download/${version}-PizzaApp/Pizza1${match}.exe`;
                 ziplink.href = `https://github.com/aiden2480/12A1-PizzaApp/archive/refs/tags/${version}-PizzaApp.zip`;
+                chnglog.href = `https://github.com/aiden2480/12A1-PizzaApp/compare/${versions[index - 1]}-PizzaApp...${version}-PizzaApp`;
 
                 rellink.innerText = "Releases page"
                 exelink.innerText = "Binary download"
                 ziplink.innerText = "ZIP download"
+                chnglog.innerText = "Changelog"
 
                 // Concatonate to node
                 elem.appendChild(vername);
@@ -250,6 +253,11 @@
                 elem.appendChild(exelink);
                 elem.innerHTML += "<br>";
                 elem.appendChild(ziplink);
+
+                if (version !== versions[0]) {
+                    elem.innerHTML += "<br>";
+                    elem.appendChild(chnglog);
+                }
 
                 // Append node
                 outer.prepend(elem);
