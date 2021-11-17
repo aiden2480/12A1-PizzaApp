@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -181,6 +181,31 @@
 
                     <img src="https://user-images.githubusercontent.com/19619206/142128195-7326618b-32c6-4347-b517-44dab216d840.png" alt="Visual Studio breakpoints" width="800" />
                     <img src="https://user-images.githubusercontent.com/19619206/142128180-949c78ee-1248-43ae-a199-10d036737257.png" alt="Local variable scope debugging" width="800" />
+                </td>
+            </tr>
+            <tr id="v1-03-4">
+                <td>
+                    Validate toppings, phone number, and postcode<br>
+
+                    A popup box will appear if the user tries to submit the form with no toppings, assuming it to be a mistake. It does, however, allow them to proceed if they're gross and like margarita.
+                    Phone numbers are mainly validated through a masked textbox, allowing for Australian mobile phone numbers in the format <code>04xx-xxx-xxx</code><br>
+
+                    The postcode is validated through the use of a regular expression, fitting four digits. It's pretty simple, but effective.
+                    <img src="https://user-images.githubusercontent.com/19619206/142128931-5e9c45f8-9d83-433e-8ea1-fcb7bbb63eee.png" alt="Postcode validation regex" width="800" />
+                </td>
+            </tr>
+            <tr id="v1-03-5">
+                <td>
+                    A minor version, the address field will be validated as non-empty, because addresses can be really long and random so it's not worth it to try and validate using regex
+                </td>
+            </tr>
+            <tr id="v1-03-6">
+                <td>
+                    Validate the quantity field<br>
+                    
+                    The quantity field will be validated as an integer of value at least one, through the use of a regular expression. If the user has attempted to order more than 30 pizzas for some reason,
+                    the program will confirm with them that they really want to order that many<br>
+                    A max length of two characters on the text box also applies.
                 </td>
             </tr>
         </table>
