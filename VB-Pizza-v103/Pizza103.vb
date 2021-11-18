@@ -82,10 +82,20 @@ Public Class Pizza103
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        Dim nameRegex = New Regex("^[A-z]+$")
+        Dim firstnameMatch = nameRegex.Match(txtFirstName.Text.Trim())
+        Dim lastnameMatch = nameRegex.Match(txtLastName.Text.Trim())
+
         ' First and last name validation
         If txtFirstName.Text = "" Then
             txtFirstName.Focus()
             MsgBox("Please enter your firstname")
+            Return
+        End If
+
+        If Not firstnameMatch.Success Then
+            txtFirstName.Focus()
+            MsgBox("First name field must contain only alphabetical characters")
             Return
         End If
 
@@ -95,9 +105,15 @@ Public Class Pizza103
             Return
         End If
 
+        If Not lastnameMatch.Success Then
+            txtLastName.Focus()
+            MsgBox("Last name field must contain only alphabetical characters")
+            Return
+        End If
+
         ' Validate phone number
         ' The mask already does a decent amount for us
-        If txtPhoneno.Text.Contains(" ") Then
+        If txtPhoneno.Text.Contains(" ") Or txtPhoneno.Text.Length() < 12 Then
             txtPhoneno.Focus()
             MsgBox("Please enter a valid Australian mobile phone number")
             Return
@@ -131,7 +147,7 @@ Public Class Pizza103
 
         If Not Integer.TryParse(txtQuantity.Text, quantity) Then
             txtQuantity.Focus()
-            MsgBox("Couldn't convert '" + txtQuantity.Text + "' to a valid non-zero integer")
+            MsgBox("Quantity must be a positive integer. '" + txtQuantity.Text + "' is invalid")
             Return
         End If
 
