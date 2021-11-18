@@ -209,6 +209,17 @@
                     A max length of two characters on the text box also applies.
                 </td>
             </tr>
+            <tr id="v1-03-7">
+                <td>
+                    Fix bugs Finn found in <a href="https://github.com/aiden2480/PizzaApp/issues/3">Issue #3</a>, patched in <a href="https://github.com/aiden2480/PizzaApp/pull/4">Pull request #4</a><br>
+                    A branch was used to edit the changes separately to the main code before merging. <a href="https://github.com/aiden2480/PizzaApp/tree/finn-bugs">See branch</a><br>
+                    <ul>
+                        <li>Blank endings on phone number are still valid</li>
+                        <li>First name + last name can have non alphabetical characters</li>
+                        <li>Quantity field should be simplified in warnings if putting in decimal places</li>
+                    </ul>
+                </td>
+            </tr>
         </table>
         <i>Part of this website was generated with JavaScript! See the <a href="https://github.com/aiden2480/PizzaApp/blob/master/index.html">source code here</a></i>
 
@@ -217,7 +228,7 @@
             const versions = [
                 "v1.01.1", "v1.01.2",
                 "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5",
-                "v1.03.1", "v1.03.2", "v1.03.3", "v1.03.4", "v1.03.5", "v1.03.6",
+                "v1.03.1", "v1.03.2", "v1.03.3", "v1.03.4", "v1.03.5", "v1.03.6", "v1.03.7",
             ];
             const regex = /v.+\.(.+)\..+/
             
