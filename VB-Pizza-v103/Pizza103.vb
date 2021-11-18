@@ -113,7 +113,7 @@ Public Class Pizza103
 
         ' Validate phone number
         ' The mask already does a decent amount for us
-        If txtPhoneno.Text.Contains(" ") Then
+        If txtPhoneno.Text.Contains(" ") Or txtPhoneno.Text.Length() < 12 Then
             txtPhoneno.Focus()
             MsgBox("Please enter a valid Australian mobile phone number")
             Return
