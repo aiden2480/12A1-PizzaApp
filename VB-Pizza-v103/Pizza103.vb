@@ -147,7 +147,7 @@ Public Class Pizza103
 
         If Not Integer.TryParse(txtQuantity.Text, quantity) Then
             txtQuantity.Focus()
-            MsgBox("Couldn't convert '" + txtQuantity.Text + "' to a valid non-zero integer")
+            MsgBox("Quantity must be a positive integer. '" + txtQuantity.Text + "' is invalid")
             Return
         End If
 
