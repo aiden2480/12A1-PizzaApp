@@ -82,6 +82,10 @@ Public Class Pizza103
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
+        Dim nameRegex = New Regex("^[A-z]+$")
+        Dim firstnameMatch = nameRegex.Match(txtFirstName.Text.Trim())
+        Dim lastnameMatch = nameRegex.Match(txtLastName.Text.Trim())
+
         ' First and last name validation
         If txtFirstName.Text = "" Then
             txtFirstName.Focus()
@@ -89,9 +93,21 @@ Public Class Pizza103
             Return
         End If
 
+        If Not firstnameMatch.Success Then
+            txtFirstName.Focus()
+            MsgBox("First name field must contain only alphabetical characters")
+            Return
+        End If
+
         If txtLastName.Text = "" Then
             txtLastName.Focus()
             MsgBox("Please enter your lastname")
+            Return
+        End If
+
+        If Not lastnameMatch.Success Then
+            txtLastName.Focus()
+            MsgBox("Last name field must contain only alphabetical characters")
             Return
         End If
 
