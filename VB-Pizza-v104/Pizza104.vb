@@ -400,4 +400,24 @@ Public Class Pizza104
             CalculateTotalCost()
         End If
     End Sub
+
+    Private Sub DisplayHelp(sender As Object, e As EventArgs) Handles helpButton.Click
+        Dim message = New List(Of String) From {
+            "A pizza ordering application written in VB.NET",
+            "Validation has been added to all fields, and a popup box will appear if invalid input is supplied.",
+            "",
+            " - First and last name accepts alphabetical characters only",
+            " - Mobile phone accepts numbers only (must be in 04xx-xxx-xxx format)",
+            " - Address can't be blank (hard to validate weird addresses)",
+            " - Postcode must be a four digit integer",
+            " - Quantity must be a one or two digit integer",
+            " - Delivery date and time must be at least 20 mins from now",
+            " - Any or no toppings may be selected, though a popup will appear if you select none",
+            "",
+            "Note: Tooltips are available on hover for all elements",
+            "prices for crust types and toppings can be viewed this way"
+        }
+
+        MsgBox(String.Join(vbNewLine, message))
+    End Sub
 End Class
