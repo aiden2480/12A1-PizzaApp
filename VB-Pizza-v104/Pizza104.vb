@@ -1,4 +1,4 @@
-﻿Imports System.Text.RegularExpressions
+Imports System.Text.RegularExpressions
 
 Public Class Pizza104
     ' Set up a class for each order
@@ -73,6 +73,9 @@ Public Class Pizza104
         tipHelp.SetToolTip(txtCrustcost, "The cost of the selected crust")
         tipHelp.SetToolTip(txtToppingscost, "The cost of the selected toppings")
         tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $11 base plus crust and toppings. A $3 delivery fee is added too")
+
+        tipHelp.SetToolTip(btnAddOrder, "Validate your input and create a new order in the database")
+        tipHelp.SetToolTip(btnHelp, "View a help popup for this application")
 
         ' Set the minimum date to today so we don't have to validate date
         dateDeldate.MinDate = Date.Today()
@@ -401,7 +404,7 @@ Public Class Pizza104
         End If
     End Sub
 
-    Private Sub DisplayHelp(sender As Object, e As EventArgs) Handles helpButton.Click
+    Private Sub DisplayHelp(sender As Object, e As EventArgs) Handles btnHelp.Click
         Dim message = New List(Of String) From {
             "A pizza ordering application written in VB.NET",
             "Validation has been added to all fields, and a popup box will appear if invalid input is supplied.",
@@ -414,8 +417,12 @@ Public Class Pizza104
             " - Delivery date and time must be at least 20 mins from now",
             " - Any or no toppings may be selected, though a popup will appear if you select none",
             "",
-            "Note: Tooltips are available on hover for all elements",
-            "prices for crust types and toppings can be viewed this way"
+            "Total pizza cost is calculated by adding the cost of the crust and",
+            "toppings to a base price of $8, then multiplying by the quantity,",
+            "and adding $3 for delivery fees",
+            "",
+            "Note: Tooltips are available on hover for all elements.",
+            "Prices for crust types and toppings can be viewed this way"
         }
 
         MsgBox(String.Join(vbNewLine, message))
