@@ -1,4 +1,5 @@
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
+Imports System.Xml.Serialization
 
 Public Class Pizza104
     ' Set up a class for each order
@@ -15,6 +16,11 @@ Public Class Pizza104
         Public deliveryDate As Date
         Public deliveryTime As String
 
+        ' Required for serialization
+        Public Sub New()
+        End Sub
+
+        ' Actial inisialisation function
         Public Sub New(firstName As String, lastName As String, phoneNo As String, address As String,
                        postcode As String, quantity As Byte, crustType As Char, toppings As List(Of String),
                        deliveryDate As Date, deliveryTime As String)
@@ -34,6 +40,8 @@ Public Class Pizza104
 
     ' Establish variables
     Shared ReadOnly orders As New List(Of PizzaOrder)
+    ReadOnly cereal As New XmlSerializer(GetType(List(Of PizzaOrder)))
+
     Dim crustCost As Double
     Dim toppingsCost As Double
     Dim resetting As Boolean = False
@@ -82,6 +90,9 @@ Public Class Pizza104
 
         ' Render all orders in the form box
         DisplayList()
+
+        ' Test serialization and deserialization functions
+        Debug.WriteLine("Field 0 address: " + DeserializeOrders(SerializeOrders())(0).address)
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
@@ -257,6 +268,26 @@ Public Class Pizza104
 
         resetting = False
     End Sub
+
+    ' Functions for serializing and deserializing the objects for long term storage on the hard disk
+    ' Algorithms attributed to http://www.vb-helper.com/howto_net_serialize.html
+    Private Function SerializeOrders()
+        Dim writer As New IO.StringWriter()
+
+        cereal.Serialize(writer, orders)
+        writer.Close()
+
+        Return writer.ToString()
+    End Function
+
+    Private Function DeserializeOrders(soup As String)
+        Dim reader As New IO.StringReader(soup)
+
+        Dim obj As List(Of PizzaOrder) = DirectCast(cereal.Deserialize(reader), List(Of PizzaOrder))
+        reader.Close()
+
+        Return obj
+    End Function
 
     ' These functions can be used in two different contexts:
     '  1. Update cost text fields as the user changes checkboxes (from event changes)
