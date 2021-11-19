@@ -49,15 +49,8 @@ Public Class Pizza104
     Dim resetting As Boolean = False
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load test orders
-        orders.Add(New PizzaOrder("Johnny", "Depp", "0431-994-732", "1 Kale Ave, Hollywood", "90027", 2, "c",
-                                  New List(Of String) From {"mus", "pep", "ham"}, "9/6/63", "21:30"))
-        orders.Add(New PizzaOrder("George", "Clooney", "0472-883-930", "480 Harvest Lane, Kansas City", "64106", 1, "r",
-                                  New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
-        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482-774-012", "34 Strother Street, Ryde", "2112", 3, "t",
-                                  New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
-        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482-771-824", "1 Taylor Street, Glebe", "2037", 5, "t",
-                                  New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
+        ' Load orders from disk if available, otherwise sample orders
+        LoadPizzaOrders()
 
         ' Apply tooltips
         tipHelp.SetToolTip(txtFirstName, "Enter your first name")
@@ -90,12 +83,6 @@ Public Class Pizza104
         ' Set the min/max date to today so we don't have to validate date
         dateDeldate.MinDate = Date.Today()
         dateDeldate.MaxDate = Date.Today().AddDays(14)
-
-        ' Render all orders in the form box
-        DisplayList()
-
-        ' Test serialization and deserialization functions
-        Debug.WriteLine("Field 0 address: " + DeserializeOrders(SerializeOrders())(0).address)
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
@@ -304,6 +291,27 @@ Public Class Pizza104
         Using reader As New StreamReader(FilePath)
             orders = DeserializeOrders(reader.ReadToEnd())
         End Using
+
+        DisplayList()
+    End Sub
+
+    ' Attempt to load the orders from the disk if the file exists
+    Private Sub LoadPizzaOrders()
+        If File.Exists(FilePath) Then
+            CerealFromFile()
+            DisplayList()
+            Return
+        End If
+
+        ' Nothing in the DB, dump in some test orders
+        orders.Add(New PizzaOrder("Johnny", "Depp", "0431-994-732", "1 Kale Ave, Hollywood", "2305", 2, "c",
+                                  New List(Of String) From {"mus", "pep", "ham"}, "9/12/21", "21:30"))
+        orders.Add(New PizzaOrder("George", "Clooney", "0472-883-930", "480 Harvest Lane, Kansas City", "2006", 1, "r",
+                                  New List(Of String) From {"pin", "pep", "oli"}, "2/12/21", "13:15"))
+        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482-774-012", "34 Strother Street, Ryde", "2112", 3, "t",
+                                  New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
+        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482-771-824", "17 Livermore Street, Glebe", "2037", 5, "t",
+                                  New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "17:45"))
 
         DisplayList()
     End Sub
