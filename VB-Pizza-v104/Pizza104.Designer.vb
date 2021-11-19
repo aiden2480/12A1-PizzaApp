@@ -141,6 +141,7 @@ Partial Class Pizza104
         '
         'btnAddOrder
         '
+        Me.btnAddOrder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnAddOrder.Location = New System.Drawing.Point(320, 167)
         Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAddOrder.Name = "btnAddOrder"
@@ -431,7 +432,8 @@ Partial Class Pizza104
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(813, 482)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(812, 483)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.txtTotalcost)
         Me.Controls.Add(Me.Label13)
@@ -468,8 +470,11 @@ Partial Class Pizza104
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
+        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MaximizeBox = False
         Me.Name = "Pizza104"
         Me.Text = "v1.04 PizzaApp"
         Me.ResumeLayout(False)
