@@ -297,6 +297,8 @@ Public Class Pizza104
 
     ' Attempt to load the orders from the disk if the file exists
     Private Sub LoadPizzaOrders()
+        orders = New List(Of PizzaOrder)
+
         If File.Exists(FilePath) Then
             CerealFromFile()
             DisplayList()
@@ -484,5 +486,16 @@ Public Class Pizza104
         }
 
         MsgBox(String.Join(vbNewLine, message))
+    End Sub
+
+    Private Sub ReadOrdersListener(sender As Object, e As EventArgs) Handles btnReadOrders.Click
+        LoadPizzaOrders()
+    End Sub
+
+    Private Sub ResetOrdersListener(sender As Object, e As EventArgs) Handles btnResetOrders.Click
+        If File.Exists(FilePath) Then
+            File.Delete(FilePath)
+            LoadPizzaOrders()
+        End If
     End Sub
 End Class
