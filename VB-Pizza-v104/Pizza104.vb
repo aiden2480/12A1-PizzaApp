@@ -87,8 +87,9 @@ Public Class Pizza104
         tipHelp.SetToolTip(btnAddOrder, "Validate your input and create a new order in the database")
         tipHelp.SetToolTip(btnHelp, "View a help popup for this application")
 
-        ' Set the minimum date to today so we don't have to validate date
+        ' Set the min/max date to today so we don't have to validate date
         dateDeldate.MinDate = Date.Today()
+        dateDeldate.MaxDate = Date.Today().AddDays(14)
 
         ' Render all orders in the form box
         DisplayList()
@@ -223,7 +224,7 @@ Public Class Pizza104
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
-                                  dateDeldate.Value, txtDeltime.Text))
+                                  Date.Parse(todayShort), txtDeltime.Text))
 
         ' Clear textboxes and load records
         ResetFields()
