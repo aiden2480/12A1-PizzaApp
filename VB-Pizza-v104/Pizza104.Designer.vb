@@ -162,7 +162,7 @@ Partial Class Pizza104
         Me.txtStList.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStList.Name = "txtStList"
         Me.txtStList.Size = New System.Drawing.Size(711, 196)
-        Me.txtStList.TabIndex = 100
+        Me.txtStList.TabIndex = 20
         '
         'Label8
         '
@@ -452,7 +452,7 @@ Partial Class Pizza104
         Me.btnResetOrders.Location = New System.Drawing.Point(661, 221)
         Me.btnResetOrders.Name = "btnResetOrders"
         Me.btnResetOrders.Size = New System.Drawing.Size(100, 24)
-        Me.btnResetOrders.TabIndex = 102
+        Me.btnResetOrders.TabIndex = 19
         Me.btnResetOrders.Text = "Reset orders"
         Me.btnResetOrders.UseVisualStyleBackColor = True
         '
@@ -462,7 +462,7 @@ Partial Class Pizza104
         Me.btnReadOrders.Location = New System.Drawing.Point(560, 221)
         Me.btnReadOrders.Name = "btnReadOrders"
         Me.btnReadOrders.Size = New System.Drawing.Size(100, 24)
-        Me.btnReadOrders.TabIndex = 103
+        Me.btnReadOrders.TabIndex = 18
         Me.btnReadOrders.Text = "Read orders"
         Me.btnReadOrders.UseVisualStyleBackColor = True
         '
