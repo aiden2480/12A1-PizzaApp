@@ -66,7 +66,7 @@ Partial Class Pizza104
         'txtFirstName
         '
         Me.txtFirstName.Location = New System.Drawing.Point(41, 60)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(132, 22)
         Me.txtFirstName.TabIndex = 0
@@ -74,10 +74,11 @@ Partial Class Pizza104
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(13, 9)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 17)
+        Me.Label1.Size = New System.Drawing.Size(144, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter order details"
         '
@@ -104,7 +105,7 @@ Partial Class Pizza104
         'txtLastName
         '
         Me.txtLastName.Location = New System.Drawing.Point(181, 60)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(132, 22)
         Me.txtLastName.TabIndex = 1
@@ -132,7 +133,7 @@ Partial Class Pizza104
         'txtQuantity
         '
         Me.txtQuantity.Location = New System.Drawing.Point(364, 114)
-        Me.txtQuantity.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.txtQuantity.MaxLength = 2
         Me.txtQuantity.Name = "txtQuantity"
         Me.txtQuantity.Size = New System.Drawing.Size(56, 22)
@@ -143,7 +144,7 @@ Partial Class Pizza104
         '
         Me.btnAddOrder.ForeColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.btnAddOrder.Location = New System.Drawing.Point(320, 167)
-        Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddOrder.Name = "btnAddOrder"
         Me.btnAddOrder.Size = New System.Drawing.Size(101, 25)
         Me.btnAddOrder.TabIndex = 17
@@ -155,7 +156,7 @@ Partial Class Pizza104
         Me.txtStList.FormattingEnabled = True
         Me.txtStList.ItemHeight = 16
         Me.txtStList.Location = New System.Drawing.Point(48, 249)
-        Me.txtStList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtStList.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStList.Name = "txtStList"
         Me.txtStList.Size = New System.Drawing.Size(711, 196)
         Me.txtStList.TabIndex = 100
@@ -163,10 +164,11 @@ Partial Class Pizza104
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(52, 226)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(130, 17)
+        Me.Label8.Size = New System.Drawing.Size(148, 17)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Orders in database"
         '
@@ -311,7 +313,7 @@ Partial Class Pizza104
         'txtPostcode
         '
         Me.txtPostcode.Location = New System.Drawing.Point(299, 114)
-        Me.txtPostcode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPostcode.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPostcode.MaxLength = 4
         Me.txtPostcode.Name = "txtPostcode"
         Me.txtPostcode.Size = New System.Drawing.Size(56, 22)
@@ -320,7 +322,7 @@ Partial Class Pizza104
         'txtAddress
         '
         Me.txtAddress.Location = New System.Drawing.Point(41, 114)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(249, 22)
         Me.txtAddress.TabIndex = 3
@@ -338,20 +340,22 @@ Partial Class Pizza104
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(469, 36)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(41, 17)
+        Me.Label9.Size = New System.Drawing.Size(46, 17)
         Me.Label9.TabIndex = 33
         Me.Label9.Text = "Crust"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(589, 36)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(67, 17)
+        Me.Label10.Size = New System.Drawing.Size(75, 17)
         Me.Label10.TabIndex = 34
         Me.Label10.Text = "Toppings"
         '
@@ -378,7 +382,7 @@ Partial Class Pizza104
         'txtCrustcost
         '
         Me.txtCrustcost.Location = New System.Drawing.Point(472, 169)
-        Me.txtCrustcost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCrustcost.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCrustcost.Name = "txtCrustcost"
         Me.txtCrustcost.ReadOnly = True
         Me.txtCrustcost.Size = New System.Drawing.Size(92, 22)
@@ -399,7 +403,7 @@ Partial Class Pizza104
         'txtToppingscost
         '
         Me.txtToppingscost.Location = New System.Drawing.Point(579, 169)
-        Me.txtToppingscost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtToppingscost.Margin = New System.Windows.Forms.Padding(4)
         Me.txtToppingscost.Name = "txtToppingscost"
         Me.txtToppingscost.ReadOnly = True
         Me.txtToppingscost.Size = New System.Drawing.Size(92, 22)
@@ -420,7 +424,7 @@ Partial Class Pizza104
         'txtTotalcost
         '
         Me.txtTotalcost.Location = New System.Drawing.Point(684, 169)
-        Me.txtTotalcost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTotalcost.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTotalcost.Name = "txtTotalcost"
         Me.txtTotalcost.ReadOnly = True
         Me.txtTotalcost.Size = New System.Drawing.Size(92, 22)
@@ -473,7 +477,7 @@ Partial Class Pizza104
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "Pizza104"
         Me.Text = "v1.04 PizzaApp"
