@@ -35,6 +35,7 @@ Known bugs are documented in the [issues tab](https://github.com/aiden2480/Pizza
 - [ ] Add an attribute of `PizzaOrder` that displays the total cost of the order in the orders list
 - [ ] Able to tick off each order as already delivered
 - [ ] JSON serialise/deserialise objects to allow for writing orders to the file system
+- [ ] Help page, indicating that **tooltips are available on hover**
 - [x] Separate branch for editing the website
     - [website branch](https://github.com/aiden2480/PizzaApp/tree/website)
 - [x] Generate links for each of the versions via JavaScript rather than hard coded.
