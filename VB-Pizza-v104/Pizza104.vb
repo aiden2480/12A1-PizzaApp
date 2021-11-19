@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.IO
+Imports System.Text.RegularExpressions
 Imports System.Xml.Serialization
 
 Public Class Pizza104
@@ -39,8 +40,9 @@ Public Class Pizza104
     End Class
 
     ' Establish variables
-    Shared ReadOnly orders As New List(Of PizzaOrder)
+    Shared orders As New List(Of PizzaOrder)
     ReadOnly cereal As New XmlSerializer(GetType(List(Of PizzaOrder)))
+    ReadOnly FilePath As String = Path.Combine(My.Application.Info.DirectoryPath, "orders.xml")
 
     Dim crustCost As Double
     Dim toppingsCost As Double
@@ -244,6 +246,8 @@ Public Class Pizza104
             txtStList.Items.Add(whitespace & order.address & " " & order.postcode & " • " & order.phoneNo)
             txtStList.Items.Add(whitespace & order.quantity & "x " & ExpandPizzaCode(order.crustType) & " crust • " & ExpandToppings(order.toppings))
         Next
+
+        CerealToFile() ' Update file
     End Sub
 
     Private Sub ResetFields()
@@ -272,7 +276,7 @@ Public Class Pizza104
     ' Functions for serializing and deserializing the objects for long term storage on the hard disk
     ' Algorithms attributed to http://www.vb-helper.com/howto_net_serialize.html
     Private Function SerializeOrders()
-        Dim writer As New IO.StringWriter()
+        Dim writer As New StringWriter()
 
         cereal.Serialize(writer, orders)
         writer.Close()
@@ -281,13 +285,27 @@ Public Class Pizza104
     End Function
 
     Private Function DeserializeOrders(soup As String)
-        Dim reader As New IO.StringReader(soup)
+        Dim reader As New StringReader(soup)
 
         Dim obj As List(Of PizzaOrder) = DirectCast(cereal.Deserialize(reader), List(Of PizzaOrder))
         reader.Close()
 
         Return obj
     End Function
+
+    Private Sub CerealToFile()
+        Using stream As StreamWriter = File.CreateText(FilePath)
+            stream.Write(SerializeOrders())
+        End Using
+    End Sub
+
+    Private Sub CerealFromFile()
+        Using reader As New StreamReader(FilePath)
+            orders = DeserializeOrders(reader.ReadToEnd())
+        End Using
+
+        DisplayList()
+    End Sub
 
     ' These functions can be used in two different contexts:
     '  1. Update cost text fields as the user changes checkboxes (from event changes)
