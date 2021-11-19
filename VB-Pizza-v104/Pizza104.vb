@@ -1,4 +1,6 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.IO
+Imports System.Text.RegularExpressions
+Imports System.Xml.Serialization
 
 Public Class Pizza104
     ' Set up a class for each order
@@ -15,6 +17,11 @@ Public Class Pizza104
         Public deliveryDate As Date
         Public deliveryTime As String
 
+        ' Required for serialization
+        Public Sub New()
+        End Sub
+
+        ' Actial inisialisation function
         Public Sub New(firstName As String, lastName As String, phoneNo As String, address As String,
                        postcode As String, quantity As Byte, crustType As Char, toppings As List(Of String),
                        deliveryDate As Date, deliveryTime As String)
@@ -33,21 +40,17 @@ Public Class Pizza104
     End Class
 
     ' Establish variables
-    Shared ReadOnly orders As New List(Of PizzaOrder)
+    Shared orders As New List(Of PizzaOrder)
+    ReadOnly cereal As New XmlSerializer(GetType(List(Of PizzaOrder)))
+    ReadOnly FilePath As String = Path.Combine(My.Application.Info.DirectoryPath, "orders.xml")
+
     Dim crustCost As Double
     Dim toppingsCost As Double
     Dim resetting As Boolean = False
 
     Private Sub PizzaApp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Load test orders
-        orders.Add(New PizzaOrder("Johnny", "Depp", "0431-994-732", "1 Kale Ave, Hollywood", "90027", 2, "c",
-                                  New List(Of String) From {"mus", "pep", "ham"}, "9/6/63", "21:30"))
-        orders.Add(New PizzaOrder("George", "Clooney", "0472-883-930", "480 Harvest Lane, Kansas City", "64106", 1, "r",
-                                  New List(Of String) From {"pin", "pep", "oli"}, "26/10/21", "12:15"))
-        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482-774-012", "34 Strother Street, Ryde", "2112", 3, "t",
-                                  New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
-        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482-771-824", "1 Taylor Street, Glebe", "2037", 5, "t",
-                                  New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "12:45"))
+        ' Load orders from disk if available, otherwise sample orders
+        LoadPizzaOrders()
 
         ' Apply tooltips
         tipHelp.SetToolTip(txtFirstName, "Enter your first name")
@@ -74,11 +77,12 @@ Public Class Pizza104
         tipHelp.SetToolTip(txtToppingscost, "The cost of the selected toppings")
         tipHelp.SetToolTip(txtTotalcost, "The total cost of your pizza, $11 base plus crust and toppings. A $3 delivery fee is added too")
 
-        ' Set the minimum date to today so we don't have to validate date
-        dateDeldate.MinDate = Date.Today()
+        tipHelp.SetToolTip(btnAddOrder, "Validate your input and create a new order in the database")
+        tipHelp.SetToolTip(btnHelp, "View a help popup for this application")
 
-        ' Render all orders in the form box
-        DisplayList()
+        ' Set the min/max date to today so we don't have to validate date
+        dateDeldate.MinDate = Date.Today()
+        dateDeldate.MaxDate = Date.Today().AddDays(14)
     End Sub
 
     Private Sub AddOrderButtonClicked(sender As Object, e As EventArgs) Handles btnAddOrder.Click
@@ -207,7 +211,7 @@ Public Class Pizza104
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
-                                  dateDeldate.Value, txtDeltime.Text))
+                                  Date.Parse(todayShort), txtDeltime.Text))
 
         ' Clear textboxes and load records
         ResetFields()
@@ -230,6 +234,8 @@ Public Class Pizza104
             txtStList.Items.Add(whitespace & order.address & " " & order.postcode & " • " & order.phoneNo)
             txtStList.Items.Add(whitespace & order.quantity & "x " & ExpandPizzaCode(order.crustType) & " crust • " & ExpandToppings(order.toppings))
         Next
+
+        CerealToFile() ' Update file
     End Sub
 
     Private Sub ResetFields()
@@ -253,6 +259,63 @@ Public Class Pizza104
         chkOlives.Checked = False
 
         resetting = False
+    End Sub
+
+    ' Functions for serializing and deserializing the objects for long term storage on the hard disk
+    ' Algorithms attributed to http://www.vb-helper.com/howto_net_serialize.html
+    Private Function SerializeOrders()
+        Dim writer As New StringWriter()
+
+        cereal.Serialize(writer, orders)
+        writer.Close()
+
+        Return writer.ToString()
+    End Function
+
+    Private Function DeserializeOrders(soup As String)
+        Dim reader As New StringReader(soup)
+
+        Dim obj As List(Of PizzaOrder) = DirectCast(cereal.Deserialize(reader), List(Of PizzaOrder))
+        reader.Close()
+
+        Return obj
+    End Function
+
+    Private Sub CerealToFile()
+        Using stream As StreamWriter = File.CreateText(FilePath)
+            stream.Write(SerializeOrders())
+        End Using
+    End Sub
+
+    Private Sub CerealFromFile()
+        Using reader As New StreamReader(FilePath)
+            orders = DeserializeOrders(reader.ReadToEnd())
+        End Using
+
+        DisplayList()
+    End Sub
+
+    ' Attempt to load the orders from the disk if the file exists
+    Private Sub LoadPizzaOrders()
+        orders = New List(Of PizzaOrder)
+
+        If File.Exists(FilePath) Then
+            CerealFromFile()
+            DisplayList()
+            Return
+        End If
+
+        ' Nothing in the DB, dump in some test orders
+        orders.Add(New PizzaOrder("Johnny", "Depp", "0431-994-732", "1 Kale Ave, Hollywood", "2305", 2, "c",
+                                  New List(Of String) From {"mus", "pep", "ham"}, "9/12/21", "21:30"))
+        orders.Add(New PizzaOrder("George", "Clooney", "0472-883-930", "480 Harvest Lane, Kansas City", "2006", 1, "r",
+                                  New List(Of String) From {"pin", "pep", "oli"}, "2/12/21", "13:15"))
+        orders.Add(New PizzaOrder("Jennifer", "Lawrence", "0482-774-012", "34 Strother Street, Ryde", "2112", 3, "t",
+                                  New List(Of String) From {"pep", "anc"}, "8/8/21", "10:20"))
+        orders.Add(New PizzaOrder("Scarlett", "Johansson", "0482-771-824", "17 Livermore Street, Glebe", "2037", 5, "t",
+                                  New List(Of String) From {"mus", "pin", "ham", "anc"}, "9/10/21", "17:45"))
+
+        DisplayList()
     End Sub
 
     ' These functions can be used in two different contexts:
@@ -401,7 +464,7 @@ Public Class Pizza104
         End If
     End Sub
 
-    Private Sub DisplayHelp(sender As Object, e As EventArgs) Handles helpButton.Click
+    Private Sub DisplayHelp(sender As Object, e As EventArgs) Handles btnHelp.Click
         Dim message = New List(Of String) From {
             "A pizza ordering application written in VB.NET",
             "Validation has been added to all fields, and a popup box will appear if invalid input is supplied.",
@@ -414,10 +477,25 @@ Public Class Pizza104
             " - Delivery date and time must be at least 20 mins from now",
             " - Any or no toppings may be selected, though a popup will appear if you select none",
             "",
-            "Note: Tooltips are available on hover for all elements",
-            "prices for crust types and toppings can be viewed this way"
+            "Total pizza cost is calculated by adding the cost of the crust and",
+            "toppings to a base price of $8, then multiplying by the quantity,",
+            "and adding $3 for delivery fees",
+            "",
+            "Note: Tooltips are available on hover for all elements.",
+            "Prices for crust types and toppings can be viewed this way"
         }
 
         MsgBox(String.Join(vbNewLine, message))
+    End Sub
+
+    Private Sub ReadOrdersListener(sender As Object, e As EventArgs) Handles btnReadOrders.Click
+        LoadPizzaOrders()
+    End Sub
+
+    Private Sub ResetOrdersListener(sender As Object, e As EventArgs) Handles btnResetOrders.Click
+        If File.Exists(FilePath) Then
+            File.Delete(FilePath)
+            LoadPizzaOrders()
+        End If
     End Sub
 End Class

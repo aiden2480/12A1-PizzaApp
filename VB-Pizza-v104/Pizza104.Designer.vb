@@ -61,7 +61,9 @@ Partial Class Pizza104
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtTotalcost = New System.Windows.Forms.TextBox()
         Me.tipHelp = New System.Windows.Forms.ToolTip(Me.components)
-        Me.helpButton = New System.Windows.Forms.Button()
+        Me.btnHelp = New System.Windows.Forms.Button()
+        Me.btnResetOrders = New System.Windows.Forms.Button()
+        Me.btnReadOrders = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -433,16 +435,36 @@ Partial Class Pizza104
         Me.txtTotalcost.TabStop = False
         Me.txtTotalcost.Text = "$11.00"
         '
-        'helpButton
+        'btnHelp
         '
-        Me.helpButton.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.helpButton.Location = New System.Drawing.Point(735, 3)
-        Me.helpButton.Name = "helpButton"
-        Me.helpButton.Size = New System.Drawing.Size(75, 25)
-        Me.helpButton.TabIndex = 101
-        Me.helpButton.Text = "Help"
-        Me.helpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.helpButton.UseVisualStyleBackColor = True
+        Me.btnHelp.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.btnHelp.Location = New System.Drawing.Point(735, 3)
+        Me.btnHelp.Name = "btnHelp"
+        Me.btnHelp.Size = New System.Drawing.Size(75, 25)
+        Me.btnHelp.TabIndex = 101
+        Me.btnHelp.Text = "Help"
+        Me.btnHelp.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnHelp.UseVisualStyleBackColor = True
+        '
+        'btnResetOrders
+        '
+        Me.btnResetOrders.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.btnResetOrders.Location = New System.Drawing.Point(661, 221)
+        Me.btnResetOrders.Name = "btnResetOrders"
+        Me.btnResetOrders.Size = New System.Drawing.Size(100, 24)
+        Me.btnResetOrders.TabIndex = 102
+        Me.btnResetOrders.Text = "Reset orders"
+        Me.btnResetOrders.UseVisualStyleBackColor = True
+        '
+        'btnReadOrders
+        '
+        Me.btnReadOrders.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.btnReadOrders.Location = New System.Drawing.Point(560, 221)
+        Me.btnReadOrders.Name = "btnReadOrders"
+        Me.btnReadOrders.Size = New System.Drawing.Size(100, 24)
+        Me.btnReadOrders.TabIndex = 103
+        Me.btnReadOrders.Text = "Read orders"
+        Me.btnReadOrders.UseVisualStyleBackColor = True
         '
         'Pizza104
         '
@@ -450,7 +472,9 @@ Partial Class Pizza104
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(13, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(812, 483)
-        Me.Controls.Add(Me.helpButton)
+        Me.Controls.Add(Me.btnReadOrders)
+        Me.Controls.Add(Me.btnResetOrders)
+        Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.txtTotalcost)
         Me.Controls.Add(Me.Label13)
@@ -538,5 +562,7 @@ Partial Class Pizza104
     Friend WithEvents Label14 As Label
     Friend WithEvents txtTotalcost As TextBox
     Friend WithEvents tipHelp As ToolTip
-    Friend WithEvents helpButton As Button
+    Friend WithEvents btnHelp As Button
+    Friend WithEvents btnResetOrders As Button
+    Friend WithEvents btnReadOrders As Button
 End Class
