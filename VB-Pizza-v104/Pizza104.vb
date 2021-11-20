@@ -481,6 +481,11 @@ Public Class Pizza104
             "toppings to a base price of $8, then multiplying by the quantity,",
             "and adding $3 for delivery fees",
             "",
+            "Records are saved to, and read from a file located in the working",
+            "directory named ""orders.xml"". Two buttons are available related to this:",
+            " - Read orders • Loads orders from the file",
+            " - Reset orders • Wipes all orders and replaces them with the defaults",
+            "",
             "Note: Tooltips are available on hover for all elements.",
             "Prices for crust types and toppings can be viewed this way"
         }
