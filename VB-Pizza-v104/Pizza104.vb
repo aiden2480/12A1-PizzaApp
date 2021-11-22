@@ -122,7 +122,13 @@ Public Class Pizza104
             MsgBox("Please enter a valid Australian mobile phone number")
             Return
         End If
-
+        
+        If Not IsNumeric(txtPhoneno.text) Then 'This bit of code here ensures that people don't end up putting a letter in ther phone number! - Aston
+            txt.Phoneno.Focus()
+            MsgBox("This phone number contains a letter in it. Ensure that the phone number is numeric")
+            Return
+        End If
+        
         ' Validate address
         If txtAddress.Text = "" Then
             txtAddress.Focus()
@@ -207,7 +213,7 @@ Public Class Pizza104
                     Return ' Stop validating to let the user change options
             End Select
         End If
-
+        
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
