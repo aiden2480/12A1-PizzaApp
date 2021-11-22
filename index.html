@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <title>PizzaApp • Aiden Gardner 12SDD6</title>
@@ -225,15 +225,48 @@
                     </ul>
                 </td>
             </tr>
+            <tr class="vspan">
+                <td colspan="2">
+                    <i>Version four is focused on ergonomics and extra functionality, such as reading and writing to disk</i>
+                </td>
+            </tr>
+            <tr id="v1-04-1">
+                <td>
+                    Set the colour theme of the app to look much nicer than the default windows colour theme.<br>
+                    The window icon was updated to match, as a pizza emoji. Titles were made bold for readability and to establish their importance.<br>
+                    A popup help message box was also added to display a help message for the user<br>
+
+                    <img src="https://user-images.githubusercontent.com/19619206/142707492-b7d12288-1e1f-4859-83f1-f2655d39107e.png" alt="new user interface" />
+                </td>
+            </tr>
+            <tr id="v1-04-2">
+                <td>
+                    Implement serialization and deserialization, write orders to file<br>
+                    The <code>orders</code> variable can be completely serialized and deserialized without any loss of data.
+                    Upon each record change, it is written to a local file in preparation of functionality soon to come
+                    (both reading and writing to file)<br>
+
+                    The max date field is also generated to be 14 days from the current date.
+                </td>
+            </tr>
+            <tr id="v1-04-3">
+                <td>
+                    Read and write orders to file.<br>
+                    
+                    Order records can be fully written to and read from the orders.xml file located next to the binary.<br>
+                    Buttons have been added on the form to read from the file (allowing the user to edit the file and have
+                    the changes be updated in the app) and resetting the orders to the default, to clear the database.
+                </td>
+            </tr>
         </table>
         <i>Part of this website was generated with JavaScript! See the <a href="https://github.com/aiden2480/PizzaApp/blob/master/index.html">source code here</a></i>
 
         <script>
-            // TODO URL for version commit changes
             const versions = [
                 "v1.01.1", "v1.01.2",
                 "v1.02.1", "v1.02.2", "v1.02.3", "v1.02.4", "v1.02.5",
                 "v1.03.1", "v1.03.2", "v1.03.3", "v1.03.4", "v1.03.5", "v1.03.6", "v1.03.7",
+                "v1.04.1", "v1.04.2", "v1.04.3",
             ];
             const regex = /v.+\.(.+)\..+/
             
