@@ -211,7 +211,7 @@ Public Class Pizza104
         orders.Add(New PizzaOrder(txtFirstName.Text, txtLastName.Text, txtPhoneno.Text,
                                   txtAddress.Text, txtPostcode.Text, txtQuantity.Text,
                                   CalculateCrustCost(), CalculateToppingsCost(),
-                                  Date.Parse(todayShort), txtDeltime.Text))
+                                  selectedDate, txtDeltime.Text))
 
         ' Clear textboxes and load records
         ResetFields()
